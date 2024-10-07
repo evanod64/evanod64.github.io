@@ -435,8 +435,9 @@ window.addEventListener('message', (event) => {
               caseStudyContainer.style.display = 'block';
           
               // Push the new state to the browser history
-              const caseStudyTitle = `${studyId}`;
-              const newURL = `${window.location.origin}${window.location.pathname}?${caseStudyTitle}`;
+ const caseStudyTitle = `Case Study: ${studyId.charAt(0).toUpperCase() + studyId.slice(1)}`;  // Capitalize the first letter
+    const newURL = `${window.location.origin}${window.location.pathname}?case-study=${studyId}`;
+    
               window.history.pushState({ studyId: studyId }, caseStudyTitle, newURL);
           
               // Update the page title for SEO
