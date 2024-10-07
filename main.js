@@ -445,7 +445,7 @@ window.addEventListener('message', (event) => {
           
             // Function to load case study content dynamically
             function loadCaseStudy(studyId) {
-              const caseStudyFile = `case-studies/case-study-${studyId}.html`;
+              const caseStudyFile = `case-studies/${studyId}.html`;
           
               // Fetch the case study content from the external HTML file
               fetch(caseStudyFile)
