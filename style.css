@@ -101,11 +101,16 @@ nav ul li a {
 
 main {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding: var(--site-gutter-large);
+    padding: var(--site-gutter-small);
     min-height: calc(100vh - 100px); /* Ensures main covers the screen */
     height: 100%;
 }
+
+@media (max-width: 768px) main {
+
+    
 
 .case-study {
 
@@ -187,6 +192,7 @@ about {
     gap: 20px; /* Adds space between stacked items */
     width: 60vw; /* Make sure it fills the available width */
   }
+
 
   .project-gallery {
     padding-top: 20vh;
