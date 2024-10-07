@@ -1,0 +1,378 @@
+:root {
+--site-gutter-large: 5vw;
+--site-gutter-mid: 32px;
+--site-gutter-small: 16px;
+
+
+--base-unit: 4px;
+--space-xs: calc(var(--base-unit) * 1);  /* 4px */
+--space-sm: calc(var(--base-unit) * 2);  /* 8px */
+--space-md: calc(var(--base-unit) * 4);  /* 16px */
+--space-lg: calc(var(--base-unit) * 6);  /* 24px */
+--space-xl: calc(var(--base-unit) * 8);  /* 32px */
+--space-xxl: calc(var(--base-unit) * 10); /* 40px */
+--space-xxxl: calc(var(--base-unit) * 16); /* 64px */
+}
+
+@font-face {
+    font-family: LAUSANNE;
+   src: url(https://static1.squarespace.com/static/5e28bcdb6e962366618ef23b/t/65d927440358fe12dd71c807/1708730180129/TWKLausanne-600.otf);} 
+
+h1,h2,h3,h4,h5 {
+    font-family: 'LAUSANNE';}
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #ffffff;
+    color: #333;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--site-gutter-large);
+    padding-top: var(--space-lg);
+    background-color: #ffffff;
+}
+
+.social-icon {
+ 
+    top: 0;
+    right: 0;
+    width: 24px; /* Adjust as needed */
+    height: 24px; /* Adjust as needed */
+}
+
+.social-icon svg {
+    width: 100%;
+    height: 100%;
+    color: #000000;
+}
+
+
+
+#logo {
+    width: 100%;
+    height: 50px;
+}
+
+nav{
+    display: inline-flex;
+justify-content: flex-end;
+align-items: flex-start;
+align-content: flex-start;
+gap: var(--space-xxl);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xxl);
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.nav-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc; /* Placeholder for nav icon */
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--site-gutter-large);
+    min-height: calc(100vh - 100px); /* Ensures main covers the screen */
+    height: 100%;
+}
+
+.case-study {
+
+    padding: var(--site-gutter-large);
+    min-height: calc(100vh - 100px); /* Ensures main covers the screen */
+    height: 100%;   
+}
+
+about {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--site-gutter-large);
+    min-height: calc(100vh - 100px); /* Ensures main covers the screen */
+    height: 100%; 
+}
+
+.left-content {
+    flex: 1;
+    width: 40vw;
+    padding-right: var(--site-gutter-large);
+}
+
+.left-content h2 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+#intro-container {
+    position: sticky;
+    top: 213px; /* Distance from the top of the viewport */
+}
+#intro-container-2 {
+    position: sticky;
+    top: 213px; /* Distance from the top of the viewport */
+}
+
+/* Responsive image container */
+#image-container {
+    height: 400px!important;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 20px;
+}
+
+#dynamic-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+
+
+#dynamic-image-2 {
+    position: relative;
+    width: 100%; /* Makes the width responsive */
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  #dynamic-image-2 img {
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image maintains its aspect ratio while filling the container */
+  }
+
+#right-content {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 20px; /* Adds space between stacked items */
+    width: 60vw; /* Make sure it fills the available width */
+  }
+
+  .project-gallery {
+    padding-top: 20vh;
+  }
+
+.project-thumbnail {
+    background-color: #ccc;
+    height: 300px; /* Fixed height for the placeholders */
+    width: 100%; /* Full width for placeholders */
+    flex-shrink: 0; /* Prevents collapsing */
+    padding-bottom: 20px;
+}
+
+
+#about-text-container {
+    max-width: 400px;
+}
+
+/* Styling for hover words */
+.hover-word:hover, .hover-word-2:hover {
+    opacity: 0.4;
+}
+
+.hover-word, .hover-word-2 {
+    color: #808184;
+}
+
+
+/* Media query for tablet */
+@media only screen and (max-width: 768px) {
+    #image-container {
+        height: 300px!important; /* Shrink the height for mobile */
+    }
+}
+
+
+ /* about image changer */
+ @media only screen and (max-width: 768px) {
+    #image-container-2 {
+        height: 300px!important; /* Shrink the height for mobile */
+    }
+    }
+
+
+
+
+    footer {
+        height: 415px;
+
+    }
+
+    /* footer flower*/
+
+.footer-container {
+
+position: relative;
+}
+
+    .container {
+        position: absolute;
+        right: var(--site-gutter-large);
+        display: flex;
+        align-items: flex-end; 
+        justify-content: space-between;
+        max-width: 45%;
+        padding: 0px; /* Added padding for better alignment */
+        box-sizing: border-box; /* Include padding in width/height calculations */
+      }
+      
+      .flower-container {
+        position: relative;
+        width: 360px; /* Set to the width of the largest SVG */
+        height: 360px; /* Set to the height of the largest SVG */
+        flex-shrink: 0;
+      }
+      
+      @media only screen and (max-width: 1200px) {
+        .flower-container{
+       position: relative;
+        width: 300px; /* Set to the width of the largest SVG */
+        height: 300px; /* Set to the height of the largest SVG */
+        flex-shrink: 0;
+      }
+      }
+      
+        @media only screen and (max-width: 1000px) {
+        .flower-container{
+       position: relative;
+        width: 300px; /* Set to the width of the largest SVG */
+        height: 300px; /* Set to the height of the largest SVG */
+        flex-shrink: 0;
+      }
+      }
+        
+      .flower-container svg {
+        position: absolute;
+        transform-origin: center;
+      }
+      
+      .base {
+        width: 100%;
+        height: 100%;
+        animation: rotateRight 400s infinite linear;
+      }
+      
+      .mid {
+        width: 62%;
+        height: 62%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: rotateLeft 300s infinite linear;
+      }
+      
+      .top {
+        width: 30%;
+        height: 30%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: rotateLeft 400s infinite linear;
+      }
+      
+      .weather-headline {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content vertically */
+        padding-left: 0%;
+       
+        box-sizing: border-box; /* Include padding in width/height calculations */
+        color: #808080;
+      }
+      
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+          padding-top: 0px;
+        }
+        .weather-headline {
+        width: 100%!important;
+          padding-left: 0px;
+          padding-top: 0px;
+      }
+      }
+      
+      .weather-info {
+        width: 100%;
+        flex: 1;
+      }
+      
+      .weather-info p {
+        margin: 0;
+        font-size: 16px; /* Adjust font size as needed */
+      }
+      
+      .base:hover {
+       opacity: 0.8;
+     
+      }
+      
+      .mid:hover {
+       opacity: 0.8;
+      }
+      
+      .top:hover {
+      opacity: 0.8;
+      }
+      
+        .hidden {
+          opacity: 0.5;
+      }
+      
+      .visible {
+          opacity: 1;
+      }
+    
+    
+    
+      @keyframes rotateRight {
+      from { transform: rotate(0deg); }
+      to {transform: rotate(359deg);}
+    }
+    
+    @keyframes rotateLeft {
+      from {transform: translate(-50%, -50%) rotate(0deg);}
+      to {transform:  translate(-50%, -50%) rotate(-359deg);}
+    }
