@@ -107,7 +107,8 @@ main {
     height: 100%;
 }
 
-@media screen (max-width: 768px) main {
+@media (max-width: 768px) {
+    main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -115,7 +116,7 @@ main {
     min-height: calc(100vh - 100px); /* Ensures main covers the screen */
     height: 100%;
 }
-
+}
 .case-study {
 
     padding: var(--site-gutter-large);
