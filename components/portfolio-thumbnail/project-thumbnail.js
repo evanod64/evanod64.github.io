@@ -34,14 +34,14 @@ class ProjectThumbnail extends HTMLElement {
         overflow: hidden;
       }
 
-      .project-thumbnail img {
+      .project-thumbnail img, .project-thumbnail video {
         position: absolute;
         border-radius: 10px;
         top: 0;
         right: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Ensures the image maintains its aspect ratio while filling the container */
+        object-fit: cover; /* Ensures the media maintains its aspect ratio while filling the container */
       }
 
       .project-thumbnail h3 {
@@ -64,10 +64,27 @@ class ProjectThumbnail extends HTMLElement {
       }
     `;
 
-    // Create an img element for the background image
-    const img = document.createElement('img');
-    img.src = this.getAttribute('img-src') || ''; // Default: no image
-    img.alt = this.getAttribute('alt') || 'Project Thumbnail';
+    // Determine if we should display an image or a video
+    const imgSrc = this.getAttribute('img-src');
+    const videoSrc = this.getAttribute('video-src');
+    let mediaElement;
+
+    if (videoSrc) {
+      // Create a video element if `video-src` is provided
+      mediaElement = document.createElement('video');
+      mediaElement.src = videoSrc;
+      mediaElement.autoplay = true;
+      mediaElement.loop = true;
+      mediaElement.muted = true;
+      mediaElement.playsInline = true; // Ensures no fullscreen on mobile
+      mediaElement.setAttribute('class', 'media-content');
+    } else if (imgSrc) {
+      // Create an img element if `img-src` is provided
+      mediaElement = document.createElement('img');
+      mediaElement.src = imgSrc;
+      mediaElement.alt = this.getAttribute('alt') || 'Project Thumbnail';
+      mediaElement.setAttribute('class', 'media-content');
+    }
 
     // Trigger custom event for case study loading
     link.addEventListener('click', (e) => {
@@ -83,12 +100,12 @@ class ProjectThumbnail extends HTMLElement {
       }));
     });
 
-    // Append everything: styles, wrapper, link, img, and title to the shadow DOM
+    // Append everything: styles, wrapper, link, media element, and title to the shadow DOM
     shadow.appendChild(style);
     shadow.appendChild(wrapper);
     wrapper.appendChild(link);  // Wrap the contents in the link
-    link.appendChild(img);
-    link.appendChild(title);
+    link.appendChild(mediaElement);  // Append the media (image or video) to the link
+    link.appendChild(title);  // Append the title to the link
   }
 }
 
