@@ -436,7 +436,7 @@ window.addEventListener('message', (event) => {
           
               // Push the new state to the browser history
               const caseStudyTitle = `Case Study ${studyId}`;
-              const newURL = `${window.location.origin}${window.location.pathname}?case=${studyId}`;
+              const newURL = `${window.location.origin}${window.location.pathname}?${caseStudyTitle}`;
               window.history.pushState({ studyId: studyId }, caseStudyTitle, newURL);
           
               // Update the page title for SEO
