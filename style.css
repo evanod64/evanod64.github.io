@@ -107,6 +107,7 @@ main {
     height: 100%;
 }
 
+
 .case-study {
 
     padding: var(--site-gutter-large);
@@ -187,7 +188,6 @@ about {
     gap: 20px; /* Adds space between stacked items */
     width: 60vw; /* Make sure it fills the available width */
   }
-
 
   .project-gallery {
     padding-top: 20vh;
