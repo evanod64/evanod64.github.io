@@ -436,7 +436,7 @@ window.addEventListener('message', (event) => {
           
               // Push the new state to the browser history
  const caseStudyTitle = `Case Study: ${studyId.charAt(0).toUpperCase() + studyId.slice(1)}`;  // Capitalize the first letter
-    const newURL = `${window.location.origin}${window.location.pathname}?case-study=${studyId}`;
+    const newURL = `${window.location.origin}${window.location.pathname}${studyId}`;
     
               window.history.pushState({ studyId: studyId }, caseStudyTitle, newURL);
           
