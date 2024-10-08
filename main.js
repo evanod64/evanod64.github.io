@@ -480,12 +480,12 @@ window.addEventListener('message', (event) => {
                 caseStudyContainer.style.display = 'none';
                 caseStudyContainer.innerHTML = '';  // Unload the case study content
           
-                // Optionally, reset the URL back to the main content
-                const newURL = `${window.location.origin}${window.location.pathname}`;
-                window.history.pushState(null, 'Main Content | My Portfolio', newURL);
-          
-                // Reset the page title
-                document.title = 'Main Content | My Portfolio';
+    // Reset the URL back to the main content
+    const newURL = `${window.location.origin}${window.location.pathname}`;
+    window.history.pushState(null, 'Main Content | My Portfolio', newURL);
+
+    // Reset the page title
+    document.title = 'Main Content | My Portfolio';
               }
             });
           
