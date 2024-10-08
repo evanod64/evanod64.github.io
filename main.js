@@ -480,7 +480,7 @@ window.addEventListener('message', (event) => {
     caseStudyContainer.innerHTML = '';  // Unload the case study content
 
     // Reset the URL back to the main content
-    const newURL = `${window.location.origin}/portfolio-website/`;
+    const newURL = `${window.location.origin}`;
     window.history.pushState(null, 'Main Content | My Portfolio', newURL);
 
     // Reset the page title
