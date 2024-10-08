@@ -471,23 +471,22 @@ window.addEventListener('message', (event) => {
                 });
             }
           
-            // Detect scrolling to remove case study content when user scrolls past it
             window.addEventListener('scroll', function() {
-              const caseStudyHeight = caseStudyContainer.offsetHeight;
-          
-              // If the user scrolls past the case study content, hide it and remove the content
-              if (window.scrollY > caseStudyHeight) {
-                caseStudyContainer.style.display = 'none';
-                caseStudyContainer.innerHTML = '';  // Unload the case study content
-          
+  const caseStudyHeight = caseStudyContainer.offsetHeight;
+
+  // If the user scrolls past the case study content, hide it and remove the content
+  if (window.scrollY > caseStudyHeight) {
+    caseStudyContainer.style.display = 'none';
+    caseStudyContainer.innerHTML = '';  // Unload the case study content
+
     // Reset the URL back to the main content
-    const newURL = `${window.location.origin}${window.location.pathname}`;
+    const newURL = `${window.location.origin}/portfolio-website/`;
     window.history.pushState(null, 'Main Content | My Portfolio', newURL);
 
     // Reset the page title
     document.title = 'Main Content | My Portfolio';
-              }
-            });
+  }
+});
           
             // Handle back/forward navigation
             window.addEventListener('popstate', function(event) {
