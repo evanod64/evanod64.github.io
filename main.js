@@ -470,6 +470,8 @@ window.addEventListener('message', (event) => {
                   console.error('There was a problem with the fetch operation:', error);
                 });
             }
+
+            
           
             window.addEventListener('scroll', function() {
   const caseStudyHeight = caseStudyContainer.offsetHeight;
