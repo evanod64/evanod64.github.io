@@ -86,11 +86,17 @@ class ProjectThumbnail extends HTMLElement {
       mediaElement.setAttribute('class', 'media-content');
     }
 
-    // Trigger custom event for case study loading
+    // Handle click event for navigation
     link.addEventListener('click', (e) => {
       e.preventDefault(); // Prevent default link behavior
 
-      // Dispatch a custom event with the study ID
+      // Get the studyId and navigate to the appropriate case study page
+      if (studyId) {
+        const newURL = `/case-studies/${studyId}.html`; // Build URL based on studyId
+        window.location.href = newURL; // Navigate to the new page
+      }
+
+      // Dispatch a custom event with the study ID (optional for other handlers)
       this.dispatchEvent(new CustomEvent('case-study-click', {
         detail: {
           studyId: studyId

@@ -432,3 +432,10 @@ width: 100%;
         }
 
     }
+
+
+
+    #homepage-container {
+        display: block;
+        margin-top: 50px; /* or whatever margin makes sense */
+      }
