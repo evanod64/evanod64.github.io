@@ -110,10 +110,14 @@ main {
 
 .case-study {
 
-    padding: var(--site-gutter-large);
+    padding-left: var(--site-gutter-large);
+    padding-right: var(--site-gutter-large);
+    padding-bottom: var(--site-gutter-large);
+    padding-top: 0px;
     min-height: calc(100vh - 100px); /* Ensures main covers the screen */
     height: 100%;   
 }
+
 
 about {
     display: flex;
@@ -437,5 +441,6 @@ width: 100%;
 
     #homepage-container {
         display: block;
-        margin-top: 50px; /* or whatever margin makes sense */
+        padding-top: 50px; /* or whatever margin makes sense */
       }
+

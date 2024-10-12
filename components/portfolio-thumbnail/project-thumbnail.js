@@ -83,7 +83,9 @@ class ProjectThumbnail extends HTMLElement {
       mediaElement = document.createElement('img');
       mediaElement.src = imgSrc;
       mediaElement.alt = this.getAttribute('alt') || 'Project Thumbnail';
+      mediaElement.loading = 'lazy'; // Lazy loading attribute
       mediaElement.setAttribute('class', 'media-content');
+
     }
 
     // Handle click event for navigation

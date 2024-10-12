@@ -29,91 +29,175 @@
     <div id="case-study-content">
       <div id="alpheya" class="case-study">
 
-        <div id="intro-wrapper">
-        
-        <div id="intro-project-title">
-          <h1 class="intro-title-content">Building the Alpheya Brand</h1>
-          <p class="intro-role">Designer / Motion</p>
+        <div id="case-study-hero-image">
+          <img src="/assets/images/Hero.jpg" alt="">
         </div>
-        
-        <div id="intro-project-context">
-        <p class="intro-text-context">
-          Alpheya is a wealthtech platform backed by BNY Mellon and Lunate, which launched in late 2023. With a mission to power and grow wealth franchises, Alpheya is focused on the Middle East and Northern Africa.<br>
-        <a href="https://www.alpheya.com/">alpheya.com ↗</a></p>
-        </div>
-        
-        <div id="intro-project-context-2">
-        <p class="intro-text-content-2">
-        Creative Contributors
-        
-        
-        Executive Creative Director: Neil Cooper
-        Design Director: Jack Wade
-        Art Director: Kyle Wukasch
-        Designer: Evan Davison
-        Account Director: Didem Peker
-        Copywriter: Julian Abel
-        </p>
-        
-        </div>
-        
 
-        </div>
+        <project-intro 
+        title="Building the Alpheya Brand"
+        role="Designer / Motion"
+        context1="Alpheya is a wealthtech platform backed by BNY Mellon and Lunate, which launched in late 2023. With a mission to power and grow wealth franchises, Alpheya is focused on the Middle East and Northern Africa.
+        <br><br><a href='https://www.alpheya.com/'>alpheya.com ↗</a>"
+        context2="Team:,,
+        Executive Creative Director: Neil Cooper,
+        Design Director: Jack Wade,
+        Art Director: Kyle Wukasch,
+        Designer: Evan Davison,
+        Account Director: Didem Peker,
+        Copywriter: Julian Abel">
+    </project-intro>
 
 
         <div id="alpheya-content">
-        <h1>Case Study Title</h1>
-        <p>
-          This is a brief introduction to the case study. It summarizes the project objectives, the challenges faced, and the overall impact of the work done. 
-        </p>
-        
-        <h2>Project Overview</h2>
-        <p>
-          The project aimed to solve a specific problem through innovative design and technology. Our approach involved extensive research, prototyping, and user testing to ensure the final product met the needs of its intended audience.
-        </p>
-      
-        <h2>Key Features</h2>
-        <ul>
-          <li>Feature 1: Description of what this feature entails.</li>
-          <li>Feature 2: Explanation of its benefits and functionality.</li>
-          <li>Feature 3: Additional details about this important aspect of the project.</li>
-        </ul>
-      
-        <h2>Visuals</h2>
-        <img src="path/to/image1.jpg" alt="Description of Image 1" style="width: 100%; height: auto; margin-bottom: 20px;">
-        <img src="path/to/image2.jpg" alt="Description of Image 2" style="width: 100%; height: auto; margin-bottom: 20px;">
-        
-        <h2>Conclusion</h2>
-        <p>
-          In conclusion, this project not only achieved its goals but also set a precedent for future work in this area. The learnings and outcomes will guide subsequent projects and innovations.
-        </p>
+
+          <div id="hero-section-wrapper">
+
+          <div id="title-text-wrapper">
+            <h1 id="hero-title">The Brand.</h1>
+            <p id="hero-text-content">Drawing inspiration from regional geography, architecture, and culture, Alpheya is a brand built for the MENA (Middle East and Northern Africa) region.</p>
+          </div>
+          <div id="media-context-wrapper">
+            <video src="/assets/video/Venue Square Mockup_Expanded_compressed.mp4"  class="media-content"></video>
+            <p id="hero-text-content-2">I was the lead animator for this Alpheya sizzle awards video, which included their graphic system in motion, brand tonality, and animated digital / OOO expressions.</p>
+          </div>
+          
+        </div>
+
+        <masonry-gallery>
+          <div class="masonry-item">
+            <img src="/assets/images/01.jpg" alt="Image 1">
+          </div>
+          <div class="masonry-item">
+            <img src="/assets/images/02.jpg" alt="Image 2">
+          </div>
+          <div class="masonry-item">
+            <img src="/assets/images/03.jpg" alt="Image 3">
+          </div>
+          <div class="masonry-item">
+            <img src="/assets/images/04.jpg" alt="Image 4">
+          </div>
+        </masonry-gallery>
+
+
+
+
+
+
+          <style>
+           
+           #hero-section-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+           }
+           
+           
+           #title-text-wrapper {
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: last baseline;
+            }
+            #media-context-wrapper {
+              display: flex;
+             flex-direction: row;
+             gap: 5vw;
+
+            }
+
+            #hero-title {
+              font-size: 12vw;
+            }
+
+            #hero-text-content {
+              max-width: 25vw;
+            }
+
+           #media-context-wrapper .media-content {
+              position: relative;
+        width: 100%; /* Makes the width responsive */
+        box-sizing: border-box;
+        overflow: hidden;
+            }
+
+            #hero-section-wrapper img, #hero-section-wrapper video {
+        position: absolute;
+        border-radius: 10px;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the media maintains its aspect ratio while filling the container */
+            }
+
+            #case-study-hero-image {
+              position: relative;
+        height: 40vh;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+            }
+
+            #case-study-hero-image img {
+            position: absolute;
+             border-radius: 10px;
+             top: 0;
+             right: 0;
+             width: 100%;
+             height: 100%;
+             object-fit: cover; /* Ensures the media maintains its aspect ratio while filling the container */
+            }
+
+
+
+            #hero-text-content-2 {
+                    min-width: 20vw;
+                    max-width: 25vw;
+                }
+
+              /* mobile styling */
+              @media (max-width: 768px) {
+
+              #hero-text-content {
+              max-width: 100%;
+            }
+            #title-text-wrapper {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: last baseline;
+              gap: 5vw;
+            }
+            #media-context-wrapper {
+              display: flex;
+             flex-direction: column-reverse;
+             gap: 10vw;
+
+            }
+
+            #hero-title {
+              font-size: 18vw;
+            }
+
+            #hero-text-content-2 {
+              max-width: 100%;
+            }
+
+                    }
+            
+            </style>
+
       </div>
 
-        <style>
-        #intro-wrapper {
-          display: flex;
-          flex-direction: row;
-          gap: var(--space-xxl);
-          margin-top: var(--space-xxl);
-          margin-bottom: var(--space-xxl);
-        }
         
-        #intro-project-title {
-          min-width: 40vw;
-        }
-
-        #alpheya-content {
-          margin-bottom: 40px;
-        }
-        
-        
-        </style>
 
     </div>
 </div>
     <div id="homepage-placeholder">
         <!-- Homepage content will be injected here -->
     </div>
+    <script src="/components/gallery/masonry-grid.js"></script>
+    <script src="/components/project/project-intro.js"></script>
     <script src="/components/portfolio-thumbnail/project-thumbnail.js"></script>
     <script src="/main.js"></script>
 </body>
