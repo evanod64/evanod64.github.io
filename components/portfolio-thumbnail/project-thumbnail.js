@@ -13,9 +13,18 @@ class ProjectThumbnail extends HTMLElement {
     const link = document.createElement('a');
     link.style.cursor = 'pointer'; // Indicate that the thumbnail is clickable
 
-    // Create a title element
+    // Create a div to wrap both titles
+    const titleWrapper = document.createElement('div');
+    titleWrapper.setAttribute('class', 'title-wrapper');
+
+    // Create the main title element
     const title = document.createElement('h3');
     title.textContent = this.getAttribute('title') || 'Project Title'; // Default title
+
+    // Create the secondary title element ("title-context")
+    const titleContext = document.createElement('h3');
+    titleContext.textContent = this.getAttribute('title-context') || 'Project Context'; // Default context title
+    titleContext.setAttribute('class', 'title-context');
 
     // Apply the `data-study-id` to the outer wrapper
     const studyId = this.getAttribute('data-study-id');
@@ -29,9 +38,21 @@ class ProjectThumbnail extends HTMLElement {
       .project-thumbnail {
         position: relative;
         width: 100%; /* Makes the width responsive */
-        padding-top: 56.25%; /* 16:9 aspect ratio */
+        padding-top: 60%; /* 16:9 aspect ratio */
         box-sizing: border-box;
         overflow: hidden;
+      }
+
+
+
+      @media (max-width: 768px) {
+            .project-thumbnail {
+        position: relative;
+        width: 100%; /* Makes the width responsive */
+        padding-top: 80%;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
       }
 
       .project-thumbnail img, .project-thumbnail video {
@@ -44,15 +65,42 @@ class ProjectThumbnail extends HTMLElement {
         object-fit: cover; /* Ensures the media maintains its aspect ratio while filling the container */
       }
 
-      .project-thumbnail h3 {
+      .title-wrapper {
         position: absolute;
         top: 10px;
         left: 10px;
+        width: calc(100% - 20px); /* Prevents overlap */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .project-thumbnail h3 {
+      font-family: Lato;
         margin: 0;
         font-size: 16px;
         color: white;
         background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better contrast */
-        padding: 5px;
+
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 10px;
+      }
+
+      .title-context {
+        font-size: 16px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better contrast */
+        font-family: Lato;
+        font-weight: 400;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin: 0;
+        border-radius: 10px;
       }
 
       .project-thumbnail a {
@@ -85,7 +133,6 @@ class ProjectThumbnail extends HTMLElement {
       mediaElement.alt = this.getAttribute('alt') || 'Project Thumbnail';
       mediaElement.loading = 'lazy'; // Lazy loading attribute
       mediaElement.setAttribute('class', 'media-content');
-
     }
 
     // Handle click event for navigation
@@ -108,12 +155,16 @@ class ProjectThumbnail extends HTMLElement {
       }));
     });
 
-    // Append everything: styles, wrapper, link, media element, and title to the shadow DOM
+    // Append everything: styles, wrapper, link, media element, and titles to the shadow DOM
     shadow.appendChild(style);
     shadow.appendChild(wrapper);
-    wrapper.appendChild(link);  // Wrap the contents in the link
-    link.appendChild(mediaElement);  // Append the media (image or video) to the link
-    link.appendChild(title);  // Append the title to the link
+    wrapper.appendChild(link); // Wrap the contents in the link
+    link.appendChild(mediaElement); // Append the media (image or video) to the link
+
+    // Append both titles to the titleWrapper, then append it to the link
+    titleWrapper.appendChild(title);
+    titleWrapper.appendChild(titleContext);
+    link.appendChild(titleWrapper);
   }
 }
 

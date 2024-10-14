@@ -42,7 +42,7 @@ class ProjectIntro extends HTMLElement {
                     flex-direction: row;
                     gap: 5vw;
                     justify-content: space-between;
-                    margin-top: var(--space-xxl);
+                    margin-top: var(--space-120);
                     margin-bottom: 120px;
                 }
                 

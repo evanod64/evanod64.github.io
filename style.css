@@ -3,6 +3,9 @@
 --site-gutter-mid: 32px;
 --site-gutter-small: 16px;
 
+--text-color-light: #ffffff;
+--text-color-dark: #000000;
+
 
 --base-unit: 4px;
 --space-xs: calc(var(--base-unit) * 1);  /* 4px */
@@ -12,6 +15,7 @@
 --space-xl: calc(var(--base-unit) * 8);  /* 32px */
 --space-xxl: calc(var(--base-unit) * 10); /* 40px */
 --space-xxxl: calc(var(--base-unit) * 16); /* 64px */
+--space-120: calc(var(--base-unit) * 30); /* 120px */
 }
 
 @font-face {
@@ -19,10 +23,11 @@
    src: url(https://static1.squarespace.com/static/5e28bcdb6e962366618ef23b/t/65d927440358fe12dd71c807/1708730180129/TWKLausanne-600.otf);} 
 
 h1,h2,h3,h4,h5 {
-    font-family: 'LAUSANNE';}
-
-
-
+    font-family: 'LAUSANNE';
+    font-weight: 500;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
 
 
 
@@ -32,72 +37,16 @@ h1,h2,h3,h4,h5 {
     box-sizing: border-box;
 }
 
+
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
     background-color: #ffffff;
-    color: #333;
     min-height: 100vh;
+    
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--site-gutter-large);
-    padding-top: var(--space-lg);
-    background-color: #ffffff;
-}
-
-.social-icon {
- 
-    top: 0;
-    right: 0;
-    width: 24px; /* Adjust as needed */
-    height: 24px; /* Adjust as needed */
-}
-
-.social-icon svg {
-    width: 100%;
-    height: 100%;
-    color: #000000;
-}
-
-
-
-#logo {
-    width: 100%;
-    height: 50px;
-}
-
-nav{
-    display: inline-flex;
-justify-content: flex-end;
-align-items: flex-start;
-align-content: flex-start;
-gap: var(--space-xxl);
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: var(--space-xxl);
-}
-
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-}
-
-.nav-icon {
-    width: 30px;
-    height: 30px;
-    background-color: #ccc; /* Placeholder for nav icon */
-}
 
 main {
     display: flex;
@@ -135,7 +84,6 @@ about {
 
 .left-content h2 {
     font-size: 40px;
-    font-weight: bold;
     line-height: 1;
 }
 
@@ -444,3 +392,21 @@ width: 100%;
         padding-top: 50px; /* or whatever margin makes sense */
       }
 
+
+      .case-study-hero-image {
+        position: relative;
+  height: 40vh;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+      }
+
+      .case-study-hero-image img {
+      position: absolute;
+       border-radius: 10px;
+       top: 0;
+       right: 0;
+       width: 100%;
+       height: 100%;
+       object-fit: cover; /* Ensures the media maintains its aspect ratio while filling the container */
+      }
