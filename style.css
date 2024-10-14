@@ -156,7 +156,7 @@ justify-content: space-between;
   }
 
   .project-gallery {
-    padding-top: 20vh;
+    padding-top: 24vh;
   }
 
 .project-thumbnail {
@@ -169,7 +169,8 @@ justify-content: space-between;
 
 
 #about-text-container {
-    max-width: 400px;
+    max-width: 60%;
+    padding-top: 24px;
 }
 
 /* Styling for hover words */
@@ -380,8 +381,8 @@ justify-content: space-between;
         #footer-flower-container {
             flex-direction: column; /* Switches to vertical layout */
             right: 0;
-            max-width: 100%;
-                position: relative;
+            width: 100%;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -394,9 +395,21 @@ justify-content: space-between;
 
       #footer-links {
         display: flex;
-        flex-direction: column;
-        gap: 40px!important;
+        flex-direction: row!important;
+        gap: 20px!important;
+        justify-content: space-between!important;
+        width: 100%;
       }
+
+      #about-text-container {
+        max-width: 100%;
+        padding-top: 24px;
+    }
+
+.footer-nav-links ul {
+   padding-top: 32px!important;
+   padding-bottom: 32px!important;
+}
 
 
         }
@@ -488,3 +501,19 @@ color: #929191;
     text-decoration: none;
     color: #333;
 }
+
+.footer-nav-links ul li a:hover {
+    text-decoration: none;
+    color: #929191;
+}
+
+
+a {
+    text-decoration: none;
+    color: #929191;
+   }
+
+   a:hover{
+    text-decoration: underline;
+    color: black;
+   }

@@ -85,6 +85,15 @@ class ProjectIntro extends HTMLElement {
                 min-width: 20vw;
                 max-width: 25vw;
             }
+                #intro-project-context a, #intro-project-context-2 a {
+             text-decoration: none;
+             color: #929191;
+            }
+
+             #intro-project-context a:hover, #intro-project-context-2 a:hover {
+             text-decoration: underline;
+             color: black;
+            }
 
             #intro-project-context-2 {
                 min-width: 20vw;
