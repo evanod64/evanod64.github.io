@@ -19,7 +19,7 @@ class MasonryGallery extends HTMLElement {
         display: grid;
         grid-template-columns: repeat(${columns}, 1fr);
         grid-auto-flow: dense;
-        grid-gap: 10px; /* Consistent gap between items */
+        grid-gap: 10px; 
         padding-top: var(--space-120);
         padding-bottom: var(--space-120);
       }
@@ -42,14 +42,12 @@ class MasonryGallery extends HTMLElement {
 
       @media (max-width: 768px) {
         .masonry-gallery {
-          grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+          grid-template-columns: repeat(2, 1fr); 
+          grid-gap: 5px;
         }
       }
 
-      @media (max-width: 480px) {
-        .masonry-gallery {
-          grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
-        }
+      
       }
     `;
 
