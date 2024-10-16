@@ -11,12 +11,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
 
-    <base href="/">
+
     <script>
-      if (window.location.hostname === 'evanod64.github.io') {
-        document.querySelector('base').setAttribute('href', '/portfolio-website/');
-      }
-    </script>
+      // Check if the site is running locally or on GitHub Pages
+      const isGitHubPages = window.location.hostname === 'evanod64.github.io';
+      
+      // Update links accordingly
+      const basePath = isGitHubPages ? '/portfolio-website' : '';
+      
+      document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('/')) {
+          link.setAttribute('href', basePath + href);
+        }
+      });
+      
+          </script>
 </head>
 <body>
 
