@@ -17,7 +17,7 @@
   <div id="nav-container"></div>
   <script>
       // Fetch the nav HTML and inject it into the page
-      fetch('./includes/nav.html')
+      fetch('/includes/nav.html')
         .then(response => response.text())
         .then(data => {
           document.getElementById('nav-container').innerHTML = data;
@@ -50,7 +50,7 @@
 <div id="wove" class="case-study">
 
   <div class="case-study-hero-image">
-    <img src="./assets/media/wove/wove-thumbnail.jpeg" alt="wove-thumbnail-banner">
+    <img src="/assets/media/wove/wove-thumbnail.jpeg" alt="wove-thumbnail-banner">
   </div>
 
   <project-intro 
@@ -96,11 +96,11 @@ hero-text-content-2="An internal project created to summarize and review the Wov
       <div class="footer-nav-links">
           <ul>
               <li><strong>Projects</strong></li>
-              <li><a href="./case-studies/alpheya.html">Alpheya →</a></li>
-              <li><a href="./case-studies/larrys.html">Larry's Cà Phê →</a></li>
-              <li><a href="./case-studies/wove.html">Wove  🔒</a></li>
-              <li><a href="./case-studies/wip-zine.html">WIP Zine →</a></li>
-              <li><a href="./case-studies/living-galapagos.html">Living Galapagos Doc  →</a></li>
+              <li><a href="/case-studies/alpheya.html">Alpheya →</a></li>
+              <li><a href="/case-studies/larrys.html">Larry's Cà Phê →</a></li>
+              <li><a href="/case-studies/wove.html">Wove  🔒</a></li>
+              <li><a href="/case-studies/wip-zine.html">WIP Zine →</a></li>
+              <li><a href="/case-studies/living-galapagos.html">Living Galapagos Doc  →</a></li>
           </ul>
       </div>
   </div>
@@ -114,10 +114,10 @@ hero-text-content-2="An internal project created to summarize and review the Wov
          </div>
   </div>
   </footer>
-  <script src="./components/content/content-hero-media.js"></script>
-  <script src="./components/gallery/masonry-gallery.js"></script>
-  <script src="./components/project/project-intro.js"></script>
-  <script src="./components/portfolio-thumbnail/project-thumbnail.js"></script>
-  <script src="./main.js"></script>
+  <script src="/components/content/content-hero-media.js"></script>
+  <script src="/components/gallery/masonry-gallery.js"></script>
+  <script src="/components/project/project-intro.js"></script>
+  <script src="/components/portfolio-thumbnail/project-thumbnail.js"></script>
+  <script src="/main.js"></script>
 </body>
 </html>
