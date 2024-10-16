@@ -10,14 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <base href="/portfolio-website/" />
+    <base href="./portfolio-website/" />
 </head>
 <body>
 
     <div id="nav-container"></div>
     <script>
         // Fetch the nav HTML and inject it into the page
-        fetch('./includes/nav.html')
+        fetch('/includes/nav.html')
           .then(response => response.text())
           .then(data => {
             document.getElementById('nav-container').innerHTML = data;
@@ -67,11 +67,11 @@
             <div class="footer-nav-links">
                 <ul>
                     <li><strong>Projects</strong></li>
-                    <li><a href="./case-studies/alpheya.html">Alpheya →</a></li>
-                    <li><a href="./case-studies/larrys.html">Larry's Cà Phê →</a></li>
-                    <li><a href="./case-studies/wove.html">Wove  🔒</a></li>
-                    <li><a href="./case-studies/wip-zine.html">WIP Zine →</a></li>
-                    <li><a href="./case-studies/living-galapagos.html">Living Galapagos Doc  →</a></li>
+                    <li><a href="/case-studies/alpheya.html">Alpheya →</a></li>
+                    <li><a href="/case-studies/larrys.html">Larry's Cà Phê →</a></li>
+                    <li><a href="/case-studies/wove.html">Wove  🔒</a></li>
+                    <li><a href="/case-studies/wip-zine.html">WIP Zine →</a></li>
+                    <li><a href="/case-studies/living-galapagos.html">Living Galapagos Doc  →</a></li>
                 </ul>
             </div>
         </div>
@@ -86,15 +86,15 @@
         </div>
         </footer>
 
-        <script src="./components/gallery/image-carousel.js"></script>
-        <script src="./components/gallery/content-gallery.js"></script>
-        <script src="./components/content/content-columns.js"></script>
-        <script src="./components/content/three-up-text.js"></script>
-        <script src="./components/content/content-hero-media.js"></script>
-        <script src="./components/gallery/masonry-gallery.js"></script>
-        <script src="./components/project/project-intro.js"></script>
-        <script src="./components/portfolio-thumbnail/project-thumbnail.js"></script>
-        <script src="./main.js"></script>
+        <script src="/components/gallery/image-carousel.js"></script>
+        <script src="/components/gallery/content-gallery.js"></script>
+        <script src="/components/content/content-columns.js"></script>
+        <script src="/components/content/three-up-text.js"></script>
+        <script src="/components/content/content-hero-media.js"></script>
+        <script src="/components/gallery/masonry-gallery.js"></script>
+        <script src="/components/project/project-intro.js"></script>
+        <script src="/components/portfolio-thumbnail/project-thumbnail.js"></script>
+        <script src="/main.js"></script>
 
 </body>
 </html>
