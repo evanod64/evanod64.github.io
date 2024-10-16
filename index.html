@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="portfolio-website/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <base href="./portfolio-website" />
+
 </head>
 <body>
 
     <div id="nav-container"></div>
     <script>
         // Fetch the nav HTML and inject it into the page
-        fetch('/includes/nav.html')
+        fetch('portfolio-website/includes/nav.html')
           .then(response => response.text())
           .then(data => {
             document.getElementById('nav-container').innerHTML = data;
@@ -86,15 +86,15 @@
         </div>
         </footer>
 
-        <script src="/components/gallery/image-carousel.js"></script>
-        <script src="/components/gallery/content-gallery.js"></script>
-        <script src="/components/content/content-columns.js"></script>
-        <script src="/components/content/three-up-text.js"></script>
-        <script src="/components/content/content-hero-media.js"></script>
-        <script src="/components/gallery/masonry-gallery.js"></script>
-        <script src="/components/project/project-intro.js"></script>
-        <script src="/components/portfolio-thumbnail/project-thumbnail.js"></script>
-        <script src="main.js"></script>
+        <script src="portfolio-website/components/gallery/image-carousel.js"></script>
+        <script src="portfolio-website/components/gallery/content-gallery.js"></script>
+        <script src="portfolio-website/components/content/content-columns.js"></script>
+        <script src="portfolio-website/components/content/three-up-text.js"></script>
+        <script src="portfolio-website/components/content/content-hero-media.js"></script>
+        <script src="portfolio-website/components/gallery/masonry-gallery.js"></script>
+        <script src="portfolio-website/components/project/project-intro.js"></script>
+        <script src="portfolio-website/components/portfolio-thumbnail/project-thumbnail.js"></script>
+        <script src="portfolio-website/main.js"></script>
 
 </body>
 </html>
