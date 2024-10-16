@@ -44,7 +44,7 @@ class ProjectIntro extends HTMLElement {
 
         // Use a template for context2 to preserve inline HTML like <br>
         const context2Template = document.createElement('template');
-        context2Template.innerHTML = (this.getAttribute('context2') || '').replace(/,/g, '<br>');
+        context2Template.innerHTML = this.getAttribute('context2') || '';
 
         // Append the template content for context2
         context2Wrapper.appendChild(context2Template.content.cloneNode(true));

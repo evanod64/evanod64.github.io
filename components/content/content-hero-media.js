@@ -17,6 +17,10 @@ class ContentHeroMedia extends HTMLElement {
       const heroTitle = document.createElement('h1');
       heroTitle.setAttribute('class', 'hero-title');
       heroTitle.textContent = this.getAttribute('hero-title') || '';
+
+      // Get the font size from the title-text-size attribute, default to 12vw if not specified
+      const titleFontSize = this.getAttribute('title-text-size') || '12vw';
+      heroTitle.style.fontSize = titleFontSize;
       
       // Create primary text content
       const heroTextContent = document.createElement('p');
@@ -39,10 +43,10 @@ class ContentHeroMedia extends HTMLElement {
       mediaElement.setAttribute('src', mediaSrc);
       mediaElement.setAttribute('loading', 'lazy');
 
-              // Add controls attribute for video elements
-              if (mediaSrc.endsWith('.mp4')) {
-                mediaElement.setAttribute('controls', ''); // Adding controls for video
-            }
+      // Add controls attribute for video elements
+      if (mediaSrc.endsWith('.mp4')) {
+          mediaElement.setAttribute('controls', ''); // Adding controls for video
+      }
   
       // Create secondary text content
       const heroTextContent2 = document.createElement('p');
@@ -77,26 +81,22 @@ class ContentHeroMedia extends HTMLElement {
         }
   
         .hero-title {
-          font-size: 12vw;
-           margin: 0!important;
-        line-height: 1!important;
-        font-family: Lausanne;
+          margin: 0!important;
+          line-height: 1!important;
+          font-family: Lausanne;
         }
   
         .hero-text-content {
           max-width: 20vw;
         }
 
-
-  
-       .hero-media-content {
+        .hero-media-content {
           position: relative;
-          width: 100%; /* Makes the width responsive */
+          width: 100%;
           box-sizing: border-box;
           overflow: hidden;
           border-radius: 10px;
-          object-fit: cover; /* Ensures the media maintains its aspect ratio while filling the container */
-
+          object-fit: cover;
         }
   
         .hero-text-content-2 {
@@ -105,45 +105,46 @@ class ContentHeroMedia extends HTMLElement {
         }
   
         /* mobile styling */
-
         @media (max-width: 768px) {
 
-        .hero-section-wrapper {
-          gap: 20px;
-        }
+          .hero-section-wrapper {
+            gap: 20px;
+          }
 
           #hero-text-content {
             max-width: 100%;
           }
+
           .title-text-wrapper {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: last baseline;
-            gap: 5vw;
+            gap: 32px;
+            align-items: start;
           }
+
           .media-context-wrapper {
             display: flex;
             flex-direction: column-reverse;
             gap: 40px;
-            
           }
   
           .hero-title {
-            font-size: 18vw;
-            margin: 0!important;
-            line-height: 1!important;
-           
+            display: inline-block;
+            transform-origin: 50% 0;
+            -webkit-font-smoothing: antialiased;
+            transform: translate3d( 0, 0, 0);
           }
 
-           .hero-text-content {
+          .hero-text-content {
             max-width: 100%;
             margin: 0;
           }
   
           .hero-text-content-2 {
             max-width: 100%;
-             margin: 0;
+            margin: 0;
           }
         }
       `;
@@ -152,8 +153,7 @@ class ContentHeroMedia extends HTMLElement {
       shadow.appendChild(style);
       shadow.appendChild(wrapper);
     }
-  }
+}
   
-  // Define the custom element
-  customElements.define('content-hero-media', ContentHeroMedia);
-  
+// Define the custom element
+customElements.define('content-hero-media', ContentHeroMedia);

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component Testing Page</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+ 
+
+  <div id="case-study-content">
+<div id="component-testing" class="case-study">
+
+    <h2 style="color: #919291; padding-top: 40px; ">[project-intro]</h2>
+
+
+  <project-intro 
+  title="Project Intro Component" 
+  role="Role Text" 
+  context1="This is an example of project context that can be included in a project-intro component."
+  context2="Here is some additional context. Adding a comma will break the line, as shown here.">
+</project-intro>
+
+
+<h2 style="color: #919291; padding-bottom: 40px; ">[content-hero-media]</h2>
+
+
+<content-hero-media
+  media-src="/assets/video/Venue Square Mockup_Expanded_compressed.mp4"
+  hero-title="Hero Media."
+  title-text-size="11.5vw"
+  hero-text-context="Template for a component with big title text, and two rows of context paragraphs."
+  hero-text-content-2="Here is the second paragraph context. It needs multiple lines to ensure it fits the page."
+></content-hero-media>
+
+
+<h2 style="color: #919291; padding-top: 120px;">[masonry-gallery]</h2>
+
+<masonry-gallery columns="3">
+    <img src="https://placehold.co/600x800" alt="Image 12" loading="lazy">
+    <img src="https://placehold.co/300x200" alt="Image 6" loading="lazy">
+    <img src="https://placehold.co/500x200" alt="Image 4" loading="lazy">
+    <img src="https://placehold.co/300x400" alt="Image 11" loading="lazy">
+    <img src="https://placehold.co/3004500" alt="Image 2" loading="lazy">
+    <img src="https://placehold.co/400x400" alt="Image 7" loading="lazy">
+
+  </masonry-gallery>
+
+
+  <h2 style="color: #919291; padding-top: 120px; padding-bottom: 120px;">[3-up-text]</h2>
+
+
+<content-columns 
+  content-columns-title="Content Section Title"
+  content-1="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Etiam ac viverra odio, sit amet ullamcorper risus.
+            Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien.
+            Fusce sit amet finibus mauris. Vivamus odio est, placerat in dolor nec, rutrum convallis arcu."
+  content-2="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Etiam ac viverra odio, sit amet ullamcorper risus.
+            Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien.
+            Fusce sit amet finibus mauris. Vivamus odio est, placerat in dolor nec, rutrum convallis arcu."
+  content-3="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+             Etiam ac viverra odio, sit amet ullamcorper risus.
+             Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien.
+             Fusce sit amet finibus mauris. Vivamus odio est, placerat in dolor nec, rutrum convallis arcu."
+  ></content-columns>
+
+
+<h2 style="color: #919291; padding-top: 120px; padding-bottom: 120px;">[content-columns] 1 paragraph</h2>
+
+
+<content-columns 
+  content-columns-title="Content Section Title"
+  content-1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac viverra odio, sit amet ullamcorper risus. Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien. Fusce sit amet finibus mauris. Vivamus odio est, placerat in dolor nec, rutrum convallis arcu."
+></content-columns>
+
+
+<h2 style="color: #919291; padding-top: 120px; padding-bottom: 120px;">[content-columns] 2 paragraph, 1 image</h2>
+
+
+<content-columns 
+  content-columns-title="Content Section Title"
+  content-1="This is the first content block."
+  content-2="This is the second content block."
+  image-1-src="https://placehold.co/600x400"
+  image-1-alt="First Image"
+  caption-1="Caption for Image 1"
+></content-columns>
+
+
+<h2 style="color: #919291; padding-top: 120px; padding-bottom: 120px;">[content-columns] 1 paragraph, 2 image</h2>
+
+
+
+<content-columns 
+  content-columns-title="Content Section Title"
+  content-1="This is the first content block."
+  image-1-src="https://placehold.co/600x400"
+  image-1-alt="First Image"
+  caption-1="Caption for Image 1"
+  image-2-src="https://placehold.co/600x400"
+  image-2-alt="Second Image"
+  caption-2="Caption for Image 2"
+></content-columns>
+
+
+<h2 style="color: #919291; padding-top: 120px; padding-bottom: 120px;">[content-columns] 1 paragraph, 1 image</h2>
+
+
+<content-columns 
+  content-columns-title="Content Section Title"
+  content-1="This is the first content block."
+  image-1-src="https://placehold.co/600x400"
+  image-1-alt="First Image"
+  caption-1="Caption for Image 1"
+  content-3=" "
+
+></content-columns>
+
+
+<h2 style="color: #919291; padding-top: 120px; padding-bottom: 120px;">[content-gallery]</h2>
+
+<content-gallery
+    columns="3"
+    aspect-ratio="3/2"
+    image-1-src="https://placehold.co/600x400"
+    image-2-src="https://placehold.co/600x400"
+    image-3-src="https://placehold.co/600x400"
+    image-4-src="https://placehold.co/600x400"
+    image-5-src="https://placehold.co/600x400"
+    image-6-src="https://placehold.co/600x400"
+></content-gallery>
+
+
+<h2 style="color: #919291; padding-top: 120px; padding-bottom: 120px;">[image-carousel]</h2>
+
+
+<image-carousel
+    image-1-src="https://placehold.co/600x400"
+    image-2-src="https://placehold.co/500x200"
+    image-3-src="https://placehold.co/400x600"
+    image-4-src="https://placehold.co/300x200"
+></image-carousel>
+
+
+
+
+
+
+
+<!-- Ideas for additional components:
+ 
+1. 3 up text
+2. 3 up, text 2 images
+3. 3 up, 2 text 1 image
+4. two column text / image
+5. two column text
+6. wide banner image
+7. grid gallery
+8. 
+
+
+-->
+
+
+
+
+
+
+  </div>
+  </div>
+  
+ <!-- <div id="homepage-placeholder">
+  
+</div>-->
+
+<footer>
+  <div id="footer-container">
+  <div id="footer-links">
+   <div id="arena-link">
+          <p>Curious?<br>
+              <a href='https://www.are.na/evan-davison/index'>are.na/evan-davison</a></p>
+      </div>
+
+      <a href="https://your-link.com" class="footer-button">Live →</a>
+  </div>
+
+  <div id="footer-nav">
+      <div class="footer-nav-links">
+          <ul>
+              <li><strong>Projects</strong></li>
+              <li><a href="/case-studies/alpheya.html">Alpheya →</a></li>
+              <li><a href="/case-studies/larrys.html">Larry's Cà Phê →</a></li>
+              <li><a href="/case-studies/wove.html">Wove  🔒</a></li>
+              <li><a href="/case-studies/wip-zine.html">WIP Zine →</a></li>
+              <li><a href="/case-studies/living-galapagos.html">Living Galapagos Doc  →</a></li>
+          </ul>
+      </div>
+  </div>
+
+      <div id="footer-flower-container" class="footer-flower-container">
+          <div id="weather-headline" class="weather-headline">
+             <p id="headline-text">Loading...</p>
+           </div>
+         <div id="flowerContainer" class="flower-container"></div>
+        
+         </div>
+  </div>
+  </footer>
+  <script src="/components/gallery/image-carousel.js"></script>
+  <script src="/components/gallery/content-gallery.js"></script>
+  <script src="/components/content/content-columns.js"></script>
+  <script src="/components/content/three-up-text.js"></script>
+  <script src="/components/content/content-hero-media.js"></script>
+  <script src="/components/gallery/masonry-gallery.js"></script>
+  <script src="/components/project/project-intro.js"></script>
+  <script src="/components/portfolio-thumbnail/project-thumbnail.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
