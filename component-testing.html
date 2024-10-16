@@ -9,8 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <base href="/portfolio-website/" />
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    
+    <base href="/">
+    <script>
+      if (window.location.hostname === 'evanod64.github.io') {
+        document.querySelector('base').setAttribute('href', '/portfolio-website/');
+      }
+    </script>
 </head>
 <body>
 
