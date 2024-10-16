@@ -9,47 +9,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
 
 
 </head>
 <body>
 
-    <div id="nav-container"></div>
-    <script>
-        // Fetch the nav HTML and inject it into the page
-        fetch('/includes/nav.html')
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById('nav-container').innerHTML = data;
-            
-            // After injecting the nav, add the event listeners
-            const hamMenu = document.querySelector('.ham-menu');
-            const overlay = document.querySelector('.overlay');
-            const offScreenMenu = document.querySelector('.off-screen-menu');
-            const menuLinks = document.querySelectorAll('.off-screen-menu a'); // Select all nav links
-      
-            // Add event listener to toggle the menu and overlay
-            hamMenu.addEventListener('click', () => {
-              hamMenu.classList.toggle('active');
-              overlay.classList.toggle('active');
-              offScreenMenu.classList.toggle('active');
-            });
-      
-            // Add event listeners to each link to close the menu when clicked
-            menuLinks.forEach(link => {
-              link.addEventListener('click', () => {
-                hamMenu.classList.remove('active');
-                overlay.classList.remove('active');
-                offScreenMenu.classList.remove('active');
-              });
-            });
-          });
-      </script>
+  <div id="nav-container" hx-get="/includes/nav.html" hx-trigger="load"></div>
+
       
 
     
 
-    <div id="homepage-placeholder"></div> <!-- Homepage content will be injected here -->
+      <div id="homepage-placeholder" hx-get="/homepage-content.html" hx-trigger="load"></div>
+
 
 
     <footer>

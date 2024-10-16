@@ -1,24 +1,5 @@
 $(document).ready(function () {
-    // Function to load and inject HTML content
-    function injectHomepageContent(placeholderId) {
-        $.get('/homepage-content.html')
-            .done(function (data) {
-                $('#' + placeholderId).html(data);
-                // Initialize hover effects only after content is injected
-                initHoverEffect();
-            })
-            .fail(function (error) {
-                console.error('Error loading homepage content:', error);
-            });
-    }
 
-    // For homepage
-    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-        injectHomepageContent('homepage-placeholder');
-    } else {
-        // For case study pages
-        injectHomepageContent('homepage-placeholder');
-    }
 
     // Function to initialize hover effects
     function initHoverEffect() {
@@ -139,6 +120,14 @@ $(document).ready(function () {
 
 
 // ----------------------- footer scripts ---------------------- //
+
+
+
+
+
+
+
+
 $(document).ready(function() {
     const baseShapes = [
         'M248.819 20.7874C256.76 -5.59572 294.117 -5.59582 302.058 20.7873L343.301 157.81L482.587 125.015C509.406 118.701 528.085 151.054 509.207 171.122L411.163 275.351L509.207 379.58C528.085 399.648 509.406 432.001 482.587 425.687L343.301 392.892L302.058 529.914C294.117 556.298 256.76 556.297 248.819 529.914L207.577 392.892L68.291 425.687C41.4721 432.001 22.7933 399.648 41.6712 379.58L139.715 275.351L41.6704 171.122C22.7925 151.054 41.4715 118.701 68.2904 125.015L207.576 157.81L248.819 20.7874ZM290.197 275.351L282.818 288.132H268.06L260.681 275.35L268.06 262.57H282.818L290.197 275.351Z',
