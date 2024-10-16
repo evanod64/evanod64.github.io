@@ -4,24 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpheya Case Study</title>
-
-    <script>
-      // Check if the site is running locally or on GitHub Pages
-      const isGitHubPages = window.location.hostname === 'evanod64.github.io';
-      
-      // Update links accordingly
-      const basePath = isGitHubPages ? '/portfolio-website' : '';
-      
-      document.querySelectorAll('a').forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('/')) {
-          link.setAttribute('href', basePath + href);
-        }
-      });
-      
-          </script>
-
-
     <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,16 +84,7 @@
 
 <div id="homepage-placeholder" hx-get="/homepage-content.html" hx-trigger="load"></div>
 
-    <footer>
-      <div id="footer-container">
-      <div id="footer-links">
-       <div id="arena-link">
-              <p>Curious?<br>
-                  <a href='https://www.alpheya.com/'>are.na/evan-davison</a></p>
-          </div>
 
-          <a href="https://your-link.com" class="footer-button">Live →</a>
-      </div>
 
       <footer>
         <div id="footer-container">
