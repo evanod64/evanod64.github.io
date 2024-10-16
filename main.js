@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // Function to load and inject HTML content
     function injectHomepageContent(placeholderId) {
-        $.get('../homepage-content.html')
+        $.get('/homepage-content.html')
             .done(function (data) {
                 $('#' + placeholderId).html(data);
                 // Initialize hover effects only after content is injected
@@ -13,7 +13,7 @@ $(document).ready(function () {
     }
 
     // For homepage
-    if (window.location.pathname === '/' || window.location.pathname === '../index.html') {
+    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
         injectHomepageContent('homepage-placeholder');
     } else {
         // For case study pages
