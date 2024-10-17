@@ -6,7 +6,7 @@
     <link rel="icon" type="image/png" href="/icons/ed-favicon-48x48.png" sizes="48x48" />
     <link rel="icon" type="image/svg+xml" href="/icons/ed-favicon.svg" />
     <link rel="shortcut icon" href="/icons/ed-favicon.ico" />
-    <title>Alpheya Case Study</title>
+    <title>Wove Case Study</title>
     <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,71 +21,49 @@
   <div id="nav-container" hx-get="/includes/nav.html" hx-trigger="load"></div>
 
   <div id="case-study-content">
-<div id="wove" class="case-study">
-
-  <div class="case-study-hero-image">
-    <img src="/assets/media/wove/wove-thumbnail.jpeg" alt="wove-thumbnail-banner">
-  </div>
-
-  <project-intro 
-  title="Launching the Wove Brand" 
-  role="Animator / Associate Designer" 
-  context1="BNY Mellon's internal tech incubator, Pershing X, was building an industry changing wealth management platform. It was one of BNY Mellon's most ambitious projects, a unified platform to be used by thousands of advisor firm clients, serving millions of investors, and managing billions of dollars. 
-<br><br>
-  The team at Critical Mass created the strategy, name, and brand identity for the platform,  preparing to launch the new product at BNY Mellon's INSITE 2023 conference." 
-  context2="Team:<br><br>
-  Creative Director - Sean Kelly<br>
-  Strategy Lead - Joe Cook<br>
-  Art Director / Copy- Ben Benchitrit<br>
-  Art Director - Kyle Wukasch<br>
-  Animator / Associate Designer - Evan Davison">
-</project-intro>
-
-<content-hero-media
-media-src="/assets/video/Venue Square Mockup_Expanded_compressed.mp4"
-hero-title="The Sizzle."
-hero-text-context=""
-hero-text-content-2="An internal project created to summarize and review the Wove brand design created by Critical Mass. I worked on the concept, storyboards, and design for this video, including all animation."
-></content-hero-media>
-
-  </div>
+    <p id="protected-message">Sorry, this content is protected. Please enter the password to unlock it.</p>
+    <form id="password-form" hx-get="wove-locked-protected.html" hx-target="#case-study-content" hx-swap="outerHTML">
+      <input type="password" id="password" name="password" class="password-input" placeholder="Enter password">
+      <button type="submit">Unlock</button>
+    </form>
   </div>
   
   <div id="homepage-placeholder" hx-get="/homepage-content.html" hx-trigger="load"></div>
 
-<footer>
-  <div id="footer-container">
-  <div id="footer-links">
-   <div id="arena-link">
-          <p>Curious?<br>
-              <a href='https://www.are.na/evan-davison/index'>are.na/evan-davison</a></p>
-      </div>
+  <footer>
+    <div id="footer-container">
+    <div id="footer-links">
+     <div id="arena-link">
+            <p>Curious?<br>
+                <a href='https://www.are.na/evan-davison/index'>are.na/evan-davison</a></p>
+        </div>
 
-      <a href="https://your-link.com" class="footer-button">Live →</a>
-  </div>
+        <a href="https://your-link.com" class="footer-button">Live →</a>
+    </div>
 
-  <div id="footer-nav">
-      <div class="footer-nav-links">
-          <ul>
-              <li><strong>Projects</strong></li>
-              <li><a href="/case-studies/alpheya.html">Alpheya →</a></li>
-              <li><a href="/case-studies/larrys.html">Larry's Cà Phê →</a></li>
-              <li><a href="/case-studies/wove.html">Wove  🔒</a></li>
-              <li><a href="/case-studies/wip-zine.html">WIP Zine →</a></li>
-              <li><a href="/case-studies/living-galapagos.html">Living Galapagos Doc  →</a></li>
-          </ul>
-      </div>
-  </div>
+    <div id="footer-nav">
+        <div class="footer-nav-links">
+            <ul>
+                <li><strong>Projects</strong></li>
+                <li><a href="/alpheya.html">Alpheya →</a></li>
+                <li><a href="/larrys.html">Larry's Cà Phê →</a></li>
+                <li><a href="/wove.html">Wove  🔒</a></li>
+                <li><a href="/wip-zine.html">WIP Zine →</a></li>
+                <li><a href="/living-galapagos.html">Living Galapagos Doc  →</a></li>
+            </ul>
+        </div>
+    </div>
 
-      <div id="footer-flower-container" class="footer-flower-container">
-          <div id="weather-headline" class="weather-headline">
-             <p id="headline-text">Loading...</p>
+        <div id="footer-flower-container" class="footer-flower-container">
+            <div id="weather-headline" class="weather-headline">
+               <p id="headline-text">Loading...</p>
+             </div>
+           <div id="flowerContainer" class="flower-container"></div>
+          
            </div>
-         <div id="flowerContainer" class="flower-container"></div>
-        
-         </div>
-  </div>
-  </footer>
+    </div>
+    </footer>
+
   <script src="/components/gallery/image-carousel.js"></script>
   <script src="/components/gallery/content-gallery.js"></script>
   <script src="/components/content/content-columns.js"></script>
