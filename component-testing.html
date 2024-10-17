@@ -42,10 +42,11 @@
 <content-hero-media
   media-src="/assets/video/Venue Square Mockup_Expanded_compressed.mp4"
   hero-title="Hero Media."
-  title-text-size="11.5vw"
+  title-text-size="11.6vw"
   hero-text-context="Template for a component with big title text, and two rows of context paragraphs."
   hero-text-content-2="Here is the second paragraph context. It needs multiple lines to ensure it fits the page."
 ></content-hero-media>
+
 
 
 <h2 style="color: #919291; padding-top: 120px;">[masonry-gallery]</h2>
@@ -62,20 +63,22 @@
   </masonry-gallery>
 
 
-  <h2 style="color: #919291; padding-top: 120px; padding-bottom: 120px;">[3-up-text]</h2>
+  <h2 style="color: #919291; padding-top: 120px; padding-bottom: 120px;">[content-columns] 3 paragraphs and space</h2>
 
 
 <content-columns 
-  content-columns-title="Content Section Title"
-  content-1="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    columns="4"
+    content-columns-title="Content Section Title"
+    content-1="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Etiam ac viverra odio, sit amet ullamcorper risus.
             Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien.
             Fusce sit amet finibus mauris. Vivamus odio est, placerat in dolor nec, rutrum convallis arcu."
-  content-2="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    content-2=" "
+    content-3="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Etiam ac viverra odio, sit amet ullamcorper risus.
             Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien.
             Fusce sit amet finibus mauris. Vivamus odio est, placerat in dolor nec, rutrum convallis arcu."
-  content-3="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    content-4="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
              Etiam ac viverra odio, sit amet ullamcorper risus.
              Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien.
              Fusce sit amet finibus mauris. Vivamus odio est, placerat in dolor nec, rutrum convallis arcu."
@@ -86,8 +89,14 @@
 
 
 <content-columns 
-  content-columns-title="Content Section Title"
-  content-1="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac viverra odio, sit amet ullamcorper risus. Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien. Fusce sit amet finibus mauris. Vivamus odio est, placerat in dolor nec, rutrum convallis arcu."
+    aspect-ratio="3 / 2" 
+    columns="4"
+    content-columns-title="Content Section Title"
+    content-1="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Etiam ac viverra odio, sit amet ullamcorper risus.
+    Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien.
+    Fusce sit amet finibus mauris. Vivamus odio est, placerat in dolor nec, rutrum convallis arcu."
+    content-1-span="2"
 ></content-columns>
 
 
@@ -95,11 +104,19 @@
 
 
 <content-columns 
+  aspect-ratio="3 / 2" 
+  columns="4"
   content-columns-title="Content Section Title"
-  content-1="This is the first content block."
-  content-2="This is the second content block."
+  content-1="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Etiam ac viverra odio, sit amet ullamcorper risus.
+  Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien.
+  Fusce sit amet finibus mauris. Vivamus odio est, placerat in dolor nec, rutrum convallis arcu."
+  content-2="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Etiam ac viverra odio, sit amet ullamcorper risus.
+  Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien."
   image-1-src="https://placehold.co/600x400"
   image-1-alt="First Image"
+  image-1-span="2"
   caption-1="Caption for Image 1"
 ></content-columns>
 
@@ -109,9 +126,15 @@
 
 
 <content-columns 
+    aspect-ratio="3 / 2" 
+    columns="4"
   content-columns-title="Content Section Title"
-  content-1="This is the first content block."
-  image-1-src="https://placehold.co/600x400"
+  content-1="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Etiam ac viverra odio, sit amet ullamcorper risus.
+  Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien.
+  Fusce sit amet finibus mauris. Vivamus odio est, placerat in dolor nec, rutrum convallis arcu."
+
+image-1-src="https://placehold.co/600x400"
   image-1-alt="First Image"
   caption-1="Caption for Image 1"
   image-2-src="https://placehold.co/600x400"
@@ -125,11 +148,17 @@
 
 <content-columns 
   content-columns-title="Content Section Title"
-  content-1="This is the first content block."
+  aspect-ratio="3 / 2" 
+  columns="4"
+  content-1="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Etiam ac viverra odio, sit amet ullamcorper risus.
+  Duis convallis, lorem sed sagittis auctor, nisi nibh rhoncus urna, eu facilisis nisi arcu at sapien.
+  Fusce sit amet finibus mauris. Vivamus odio est, placerat in dolor nec, rutrum convallis arcu."
   image-1-src="https://placehold.co/600x400"
   image-1-alt="First Image"
+  image-1-span="3"
   caption-1="Caption for Image 1"
-  content-3=" "
+ 
 
 ></content-columns>
 

@@ -45,6 +45,8 @@ class ContentGallery extends HTMLElement {
                 display: grid;
                 grid-template-columns: repeat(${columnCount}, 1fr);
                 gap: 16px;
+                padding-top: 64px;
+                padding-bottom: 64px;
             }
 
             .gallery-item {

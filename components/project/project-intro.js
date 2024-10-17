@@ -57,63 +57,82 @@ class ProjectIntro extends HTMLElement {
         const style = document.createElement('style');
         style.textContent = `
             #intro-wrapper {
-                display: flex;
-                flex-direction: row;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
                 gap: 5vw;
-                justify-content: space-between;
-                margin-top: var(--space-120);
-                margin-bottom: 120px;
+                padding-top: 64px;
+                padding-bottom: 120px;
+                justify-content: center;
             }
 
-
-      .intro-title {
-        margin-top: 0;
-        margin-bottom: 16px;
-      }
-
-      
-      .intro-role {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-            
             #intro-title-container {
-                min-width: 30vw;
+                grid-column: span 2;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                min-width: 0; /* prevent overflow */
             }
 
-            #intro-project-context {
-                min-width: 20vw;
-                max-width: 25vw;
-            }
-                #intro-project-context a, #intro-project-context-2 a {
-             text-decoration: none;
-             color: #929191;
+            .intro-title {
+                margin: 0 0 16px 0;
+                font-size: 2rem;
             }
 
-             #intro-project-context a:hover, #intro-project-context-2 a:hover {
-             text-decoration: underline;
-             color: black;
+            .intro-role {
+                margin: 0;
+                font-size: 1.2rem;
+                color: #666;
             }
 
+            #intro-project-context,
             #intro-project-context-2 {
-                min-width: 20vw;
-                max-width: 25vw;
+                grid-column: span 1;
+                min-width: 0; /* prevent overflow */
+            }
+
+            #intro-project-context a,
+            #intro-project-context-2 a {
+                text-decoration: none;
+                color: #929191;
+            }
+
+            #intro-project-context a:hover,
+            #intro-project-context-2 a:hover {
+                text-decoration: underline;
+                color: black;
             }
 
             /* tablet style */
             @media (max-width: 1024px) and (min-width: 768px) {
+                #intro-wrapper {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 5vw;
+                }
+
                 #intro-title-container {
-                    min-width: 30vw;
+                    grid-column: span 2;
+                }
+
+                #intro-project-context,
+                #intro-project-context-2 {
+                    grid-column: span 1;
                 }
             }
 
             /* mobile styling */
             @media (max-width: 768px) {
                 #intro-wrapper {
+                    display: flex;
                     flex-direction: column;
                     gap: var(--space-lg);
                     margin-top: var(--space-xxl);
                     margin-bottom: var(--space-xxl);
+                }
+
+                #intro-title-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
                 }
 
                 #intro-project-context,

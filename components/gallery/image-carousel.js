@@ -76,6 +76,8 @@ class ImageCarousel extends HTMLElement {
                 width: 100%;
                 max-width: 100vw;
                 margin: 0 auto;
+                padding-top: 64px;
+                padding-bottom: 64px;
             }
 
             .carousel {
