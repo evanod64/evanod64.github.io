@@ -1,5 +1,9 @@
 $(document).ready(function () {
+
+    initHoverEffect(); 
+
     document.addEventListener('htmx:afterSettle', function(evt) {
+        initHoverEffect();  
         $('.ham-menu').off('click').on('click', function () {
             $(this).toggleClass('active');
             $('.overlay').toggleClass('active');
