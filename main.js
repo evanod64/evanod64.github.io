@@ -1,11 +1,30 @@
 $(document).ready(function () {
-
-    initHoverEffect();  // Initialize hover effects on page load
-
-    // Reinitialize hover effects after HTMX content loads
     document.addEventListener('htmx:afterSettle', function(evt) {
-        initHoverEffect();
+        $('.ham-menu').off('click').on('click', function () {
+            $(this).toggleClass('active');
+            $('.overlay').toggleClass('active');
+            $('.off-screen-menu').toggleClass('active');
+            console.log("class set to active");
+        });
+        
+        $('.off-screen-menu a').on('click', function (e) {
+            $('.ham-menu').removeClass('active');
+            $('.overlay').removeClass('active');
+            $('.off-screen-menu').removeClass('active');
+        });
+        
+        
     });
+
+
+
+
+
+
+  
+
+
+
 
 // Function to initialize hover effects
 function initHoverEffect() {
@@ -108,6 +127,9 @@ function initHoverEffect() {
     $(window).on('scroll', handleScroll);
 
 
+
+
+ 
 
 
 

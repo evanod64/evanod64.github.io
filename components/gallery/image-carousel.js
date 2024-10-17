@@ -16,13 +16,13 @@ class ImageCarousel extends HTMLElement {
         // Left button
         const leftButton = document.createElement('button');
         leftButton.setAttribute('class', 'carousel-button left');
-        leftButton.textContent = '<';
+        leftButton.textContent = '←';
         leftButton.addEventListener('click', () => this.showPreviousImage());
 
         // Right button
         const rightButton = document.createElement('button');
         rightButton.setAttribute('class', 'carousel-button right');
-        rightButton.textContent = '>';
+        rightButton.textContent = '→';
         rightButton.addEventListener('click', () => this.showNextImage());
 
         // Thumbnails wrapper
@@ -54,7 +54,7 @@ class ImageCarousel extends HTMLElement {
             thumbnail.setAttribute('src', imgSrc);
             thumbnail.setAttribute('class', 'thumbnail-image');
             thumbnail.setAttribute('alt', `Thumbnail image ${imageIndex}`);
-            thumbnail.addEventListener('click', () => this.showImage(imageIndex - 1));
+            thumbnail.addEventListener('click', () => this.showImage(imageIndex - 1));  // Correct click handler
 
             thumbnails.appendChild(thumbnail);
 
@@ -80,18 +80,24 @@ class ImageCarousel extends HTMLElement {
 
             .carousel {
                 width: 70vw;
-                height: 500px;
+                height: 50vh;
                 margin: 0 auto;
                 overflow: hidden;
                 position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             .carousel-image {
                 width: 100%;
-                height: auto;
+                height: 100%;
+                min-width: 100%;
+                min-height: 100%;
                 display: none;
                 transition: opacity 0.3s ease;
                 object-fit: contain;
+                border-radius: 10px;
             }
 
             .carousel-image.active {
@@ -109,6 +115,7 @@ class ImageCarousel extends HTMLElement {
                 cursor: pointer;
                 z-index: 1;
                 font-size: 2rem;
+                 border-radius: 5px;
             }
 
             .carousel-button.left {
@@ -129,10 +136,11 @@ class ImageCarousel extends HTMLElement {
             .thumbnail-image {
                 width: 50px;
                 height: 50px;
-                object-fit: contain;
+                object-fit: cover;
                 cursor: pointer;
                 opacity: 0.5;
                 transition: opacity 0.3s ease;
+                 border-radius: 5px;
             }
 
             .thumbnail-image.active {
@@ -148,6 +156,7 @@ class ImageCarousel extends HTMLElement {
                 .thumbnail-image {
                     width: 40px;
                     height: 40px;
+                    border-radius: 5px;
                 }
             }
         `;
@@ -173,6 +182,7 @@ class ImageCarousel extends HTMLElement {
     }
 
     updateCarousel() {
+        // Update carousel images
         this.images.forEach((img, index) => {
             img.classList.toggle('active', index === this.currentImageIndex);
         });
