@@ -20,17 +20,12 @@ $(document).ready(function () {
         
     });
 
-
-
-
-
-
   
 
+// ---------------------- homepage hover interactions ---------------------- //
 
 
 
-// Function to initialize hover effects
 function initHoverEffect() {
     const hoverWords = $('.hover-word');
 
@@ -40,16 +35,16 @@ function initHoverEffect() {
                 const newImage = $(this).data('image');
                 const dynamicImage = $('#dynamic-image');
 
-                if (dynamicImage.length) { // Check if dynamicImage exists
-                    dynamicImage.attr('src', newImage);  // Set the image source
-                    dynamicImage.css('opacity', '1');  // Show the image on hover
+                if (dynamicImage.length) { 
+                    dynamicImage.attr('src', newImage);
+                    dynamicImage.css('opacity', '1');
                 }
             });
 
             $(this).on('mouseout', function () {
                 const dynamicImage = $('#dynamic-image');
-                if (dynamicImage.length) { // Check if dynamicImage exists
-                    dynamicImage.css('opacity', '0');  // Hide the image when not hovering
+                if (dynamicImage.length) {
+                    dynamicImage.css('opacity', '0');
                 }
             });
         });
@@ -59,26 +54,26 @@ function initHoverEffect() {
 
     hoverWords2.on('mouseover', function () {
         const newImage = $(this).data('image');
-        window.parent.postMessage({ image: newImage, section: 'section2' }, '*');  // Send the image URL to the parent window with section info
+        window.parent.postMessage({ image: newImage, section: 'section2' }, '*');
     });
 
     hoverWords2.on('mouseout', function () {
-        window.parent.postMessage({ image: null, section: 'section2' }, '*');  // Send null image for reset
+        window.parent.postMessage({ image: null, section: 'section2' }, '*');
     });
 
     window.addEventListener('message', (event) => {
-        if (event.data.section === 'section2') {  // Check if the message is for the correct section
+        if (event.data.section === 'section2') {
             const dynamicImage = $('#dynamic-image-2');
             if (event.data.image) {
-                dynamicImage.attr('src', event.data.image);  // Change the image source based on the message
+                dynamicImage.attr('src', event.data.image);
             } else {
-                // Optionally reset to a default image if necessary
+                
                 dynamicImage.attr('src', "https://images.squarespace-cdn.com/content/5e28bcdb6e962366618ef23b/a72b8b70-2f3e-4439-a695-71f1c9c9c9ae/20230505_sol_p400_rooftop_041+2.png?content-type=image%2Fpng");
             }
         }
     });
 
-    // Random hobby replacement
+    // Random hobby replacement 
     const hobbies = ["Rug making", "Woodworking", "Illumination", "Horticulture", "Making a terrarium", "Learning to sew"];
     function setRandomHobby() {
         const randomHobby = hobbies[Math.floor(Math.random() * hobbies.length)];
@@ -90,6 +85,15 @@ function initHoverEffect() {
 
     setRandomHobby(); // Set random hobby on page load
 }
+
+
+
+
+
+// ---------------------- scroll case study unloading ---------------------- //
+
+
+
 
 
     // Track if the case study has already been unloaded to prevent multiple unloads

@@ -141,7 +141,7 @@ class ProjectThumbnail extends HTMLElement {
 
       // Get the studyId and navigate to the appropriate case study page
       if (studyId) {
-        const newURL = `/case-studies/${studyId}.html`; // Build URL based on studyId
+        const newURL = `/${studyId}.html`; // Build URL based on studyId
         window.location.href = newURL; // Navigate to the new page
       }
 
