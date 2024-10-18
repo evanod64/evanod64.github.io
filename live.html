@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/icons/ed-favicon-48x48.png" sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href="/icons/ed-favicon.svg" />
+    <link rel="shortcut icon" href="/icons/ed-favicon.ico" />
+    <title>Live</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+
+
+</head>
+<body>
+
+  <div id="nav-container" hx-get="/includes/nav.html" hx-trigger="load"></div>
+
+
+  <div id="case-study-content">
+  <div id="live-page-wrapper">
+  <h1 id="live-intro-content">
+    See what Evan and his roommate <a href="https://www.chrisocana.com/live">Chris</a> are up to right now at <span id="live-clock"></span> ↓ 
+</h1>
+
+<div id="live-video-container"></div>
+
+<script>
+    // Function to update the live clock
+    function updateClock() {
+        const clockElement = document.getElementById('live-clock');
+        const now = new Date();
+        let hours = now.getHours();
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // '0' should be '12'
+        
+        clockElement.innerHTML = `${hours}:${minutes} ${ampm}`;
+    }
+
+    setInterval(updateClock, 1000); // Update the clock every second
+    updateClock(); // Initial call to display the clock immediately
+
+    // Function to dynamically load video based on time
+    document.addEventListener('DOMContentLoaded', function() {
+        const videoContainer = document.getElementById('live-video-container');
+
+        const getVideoSource = () => {
+            const currentHour = new Date().getHours();
+            let videoSrc;
+
+            if (currentHour >= 0 && currentHour < 7) {
+                videoSrc = 'https://player.vimeo.com/video/976821841?autoplay=1&loop=1&autopause=0&background=1&muted=1&color=ffffff&controls=0&portrait=0';
+            } else if (currentHour >= 7 && currentHour < 12) {
+                videoSrc = 'https://player.vimeo.com/video/976936913?autoplay=1&loop=1&autopause=0&background=1&muted=1&color=ffffff&controls=0&portrait=0';
+            } else if (currentHour >= 12 && currentHour < 18) {
+                videoSrc = 'https://player.vimeo.com/video/976022185?autoplay=1&loop=1&autopause=0&background=1&muted=1&color=ffffff&controls=0&portrait=0';
+            } else if (currentHour >= 18 && currentHour < 21) {
+                videoSrc = 'https://player.vimeo.com/video/976833088?autoplay=1&loop=1&autopause=0&background=1&muted=1&color=ffffff&controls=0&portrait=0';
+            } else {
+                videoSrc = 'https://player.vimeo.com/video/976821841?autoplay=1&loop=1&autopause=0&background=1&muted=1&color=ffffff&controls=0&portrait=0';
+            }
+
+            return videoSrc;
+        };
+
+        const videoSrc = getVideoSource();
+        const iframeHTML = `
+            <div class="live-video-wrapper">
+                <iframe src="${videoSrc}" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+        `;
+
+        videoContainer.innerHTML = iframeHTML;
+    });
+</script>
+
+
+<p>Made in 24 hours, <a href="https://chatgpt.com/share/1df28cb0-9635-4de4-b0cb-be74294047c1" target="_blank"><span style="text-decoration:underline">just to see if we could</span></a></p>
+
+
+</div>
+</div>
+
+
+
+
+
+
+  
+  <div id="homepage-placeholder" hx-get="/homepage-content.html" hx-trigger="load"></div>
+
+<footer>
+  <div id="footer-container">
+  <div id="footer-links">
+   <div id="arena-link">
+          <p>Curious?<br>
+              <a href='https://www.are.na/evan-davison/index'>are.na/evan-davison</a></p>
+      </div>
+
+      <a href="/live.html" class="footer-button">Live →</a>
+  </div>
+
+  <div id="footer-nav">
+      <div class="footer-nav-links">
+          <ul>
+              <li><strong>Projects</strong></li>
+              <li><a href="/case-studies/alpheya.html">Alpheya →</a></li>
+              <li><a href="/case-studies/larrys.html">Larry's Cà Phê →</a></li>
+              <li><a href="/case-studies/wove.html">Wove  🔒</a></li>
+              <li><a href="/case-studies/wip-zine.html">WIP Zine →</a></li>
+              <li><a href="/case-studies/living-galapagos.html">Living Galapagos Doc  →</a></li>
+          </ul>
+      </div>
+  </div>
+
+      <div id="footer-flower-container" class="footer-flower-container">
+          <div id="weather-headline" class="weather-headline">
+             <p id="headline-text">Loading...</p>
+           </div>
+         <div id="flowerContainer" class="flower-container"></div>
+        
+         </div>
+  </div>
+  </footer>
+  <script src="/components/gallery/image-carousel.js"></script>
+  <script src="/components/gallery/content-gallery.js"></script>
+  <script src="/components/content/content-columns.js"></script>
+  <script src="/components/content/content-hero-media.js"></script>
+  <script src="/components/gallery/masonry-gallery.js"></script>
+  <script src="/components/project/project-intro.js"></script>
+  <script src="/components/portfolio-thumbnail/project-thumbnail.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>

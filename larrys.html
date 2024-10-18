@@ -44,17 +44,19 @@
   and a very special thanks to Heard City for making this sound great.">
 </project-intro>
 
-<!-- This is a video embed block -->
-<div class="video-wrapper">
-  <iframe 
-      src="https://player.vimeo.com/video/994901322" 
-      width="640" 
-      height="360" 
-      frameborder="0" 
-      allow="autoplay; fullscreen; picture-in-picture" 
-      allowfullscreen>
-  </iframe>
+
+
+<div id="larrys-video-wrapper">
+
+<div class="video-embed-wrapper">
+  <iframe src="https://player.vimeo.com/video/994901322"
+  frameborder="0"
+  allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+  ></iframe>
 </div>
+</div>
+
+
 
 <div id="larrys-gallery">
 <masonry-gallery columns="2">
@@ -68,46 +70,6 @@
   </div>
   </div>
 
-  <style>
-
-#larrys-gallery {
-  max-width: 70vw;
-  margin-left: auto; margin-right: auto;
-}
-
-
-   /* Video wrapper styles */
-   .video-wrapper {
-            width: 70vw; /* Set width to 60% of the viewport */
-            position: relative; /* Position relative for absolute positioning of the iframe */
-            padding-top: 56.25%; /* Maintain a 16:9 aspect ratio */
-            overflow: hidden; /* Hide overflow */
-            margin-left: auto; margin-right: auto;
-            border-radius: 10px;
-         
-        }
-
-    
-
-        /* Video iframe styles */
-        .video-wrapper iframe {
-            position: absolute; /* Position absolute within the wrapper */
-            top: 0; /* Align to the top */
-            left: 0; /* Align to the left */
-            width: 100%; /* Make the iframe fill the width of the wrapper */
-            height: 100%; /* Make the iframe fill the height of the wrapper */
-        
-        }
-
-        /* Mobile styling */
-        @media (max-width: 768px) {
-            .video-wrapper {
-                width: 100%; /* Change width to 100% on mobile */
-                padding-top: 56.25%; /* Maintain aspect ratio */
-            }
-        }
-    
-    </style>
 
   
 <div id="homepage-placeholder" hx-get="/homepage-content.html" hx-trigger="load"></div>
@@ -120,7 +82,7 @@
               <a href='https://www.are.na/evan-davison/index'>are.na/evan-davison</a></p>
       </div>
 
-      <a href="https://your-link.com" class="footer-button">Live →</a>
+      <a href="/live.html" class="footer-button">Live →</a>
   </div>
 
   <div id="footer-nav">

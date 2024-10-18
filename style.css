@@ -31,6 +31,13 @@ h1,h2,h3,h4,h5 {
     padding: 0;
 }
 
+h1 {
+    font-size: calc(2.2vw + 1rem);
+ line-height: 1;
+ letter-spacing: -1px;
+}
+
+
 
 
 * {
@@ -55,7 +62,6 @@ main {
     display: flex;
     justify-content: space-between;
     padding: var(--site-gutter-large);
-    min-height: calc(100vh - 100px); /* Ensures main covers the screen */
     height: 100%;
 }
 
@@ -81,6 +87,18 @@ about {
 
 
 
+#live-page-wrapper {
+
+    padding: var(--site-gutter-large);
+
+}
+
+#live-intro-content {
+    max-width: 50vw;
+    margin-bottom: 40px;
+}
+
+
 #footer-container {
 display: flex;
 flex-direction: row;
@@ -95,10 +113,7 @@ justify-content: space-between;
     padding-right: var(--site-gutter-large);
 }
 
-.left-content h2 {
-    font-size: 40px;
-    line-height: 1;
-}
+
 
 #intro-container {
     display: flex;
@@ -152,7 +167,7 @@ justify-content: space-between;
 #right-content {
     display: flex;
     flex-direction: column; /* Stack elements vertically */
-    gap: 20px; /* Adds space between stacked items */
+    gap: 40px; /* Adds space between stacked items */
     width: 60vw; /* Make sure it fills the available width */
   }
 
@@ -331,6 +346,18 @@ justify-content: space-between;
 
 
     @media (max-width: 768px) {
+
+        h1 {
+            font-size: calc(5vw + 1rem);
+         
+        }
+
+
+
+
+
+
+
         main {
             flex-direction: column;
             padding: var(--site-gutter-mid);
@@ -372,11 +399,11 @@ justify-content: space-between;
             margin-top: 0px;
             margin-bottom: 20px;
             width: 100%;
-            height: 300px!important;
+            height: 200px!important;
         }
 
         #image-container-2 {
-            height: 300px!important; /* Shrink the height for mobile */
+            height: 200px!important;
         }
 
         #footer-flower-container {
@@ -412,17 +439,44 @@ justify-content: space-between;
    padding-bottom: 32px!important;
 }
 
+#live-intro-content {
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+#lockedContent {
+    flex-direction: column;
+    width: 100%;
+max-width: 100%;
+}
+
+
+
+
+
+#input-wrapper {
+    flex-direction: column;
+}
+
+#password {
+    width: 100%;
+}
+
+#submit {
+    right: 15px;
+}
+
+
+
 
         }
-
-
-    
+     /* ---------------------------- END mobile styling ----------------------- */
 
 
 
     #homepage-container {
         display: block;
-        padding-top: 50px; /* or whatever margin makes sense */
+        padding-top: 40px;
       }
 
 
@@ -441,7 +495,7 @@ justify-content: space-between;
        right: 0;
        width: 100%;
        height: 100%;
-       object-fit: cover; /* Ensures the media maintains its aspect ratio while filling the container */
+       object-fit: cover;
       }
 
 
@@ -466,7 +520,7 @@ color: #929191;
 .footer-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: black; /* Button color */
+    background-color: black; 
     color: white;
     text-align: center;
     text-decoration: none;
@@ -477,7 +531,9 @@ color: #929191;
 }
 
 .footer-button:hover {
-    background-color: gray; /* Hover color */
+    background-color: rgb(92, 92, 92);
+    color: white;
+    text-decoration: none;
 }
 
 
@@ -598,27 +654,68 @@ a {
     margin-top: 10px;
 }
 
-/* Stacking on mobile */
+
+
+
+
+
+
+
+#larrys-gallery {
+    max-width: 70vw;
+    margin-left: auto; margin-right: auto;
+  }
+
+  #larrys-video-wrapper {
+    max-width: 79vw;
+    margin-left: auto; margin-right: auto;
+  }
+  
+  
+
+.video-embed-wrapper {
+    padding:50% 0 0 0;
+    position:relative;
+    border-radius: 10px;
+    overflow: clip;
+}
+
+
+.video-embed-wrapper iframe {
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+
 @media (max-width: 768px) {
-    #lockedContent {
-        flex-direction: column;
-        width: 100%;
-max-width: 100%;
-    }
+
+    #larrys-video-wrapper {
+        max-width: 100%;
+        margin-left: auto; margin-right: auto;
+      }
+
+}
+
+.live-video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: clip;
+    border-radius: 10px;
+}
+
+.live-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
 
 
-
-
-    #input-wrapper {
-        flex-direction: column;
-    }
-
-    #password {
-        width: 100%;
-    }
-
-    #submit {
-        right: 15px;
-    }
+#live-video-container {
+margin-bottom: 40px;
 }
