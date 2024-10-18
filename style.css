@@ -66,7 +66,7 @@ main {
     padding-right: var(--site-gutter-large);
     padding-bottom: var(--site-gutter-large);
     padding-top: 0px;
-    min-height: calc(100vh - 100px); /* Ensures main covers the screen */
+
     height: 100%;   
 }
 
@@ -518,3 +518,107 @@ a {
     text-decoration: underline;
     color: black;
    }
+
+
+
+
+
+
+/* Styling the locked content container */
+#lockedContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 50vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Styling the icon */
+#lock-icon {
+  
+    fill: #9a9ca0;
+    margin-bottom: 20px;
+}
+
+/* Styling the first message (larger, bold) */
+#lockedContent h1 {
+
+    margin-bottom: 16px;
+    color: #333;
+}
+
+/* Styling the second message (smaller) */
+#lockedContent p {
+ 
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* Container for input and button (styled as icon inside) */
+#input-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 240px;
+}
+
+/* Styling the password input field */
+#password {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    font-size: 16px;
+    border: 1px solid #cccdd0;
+    border-radius: 10px;
+    outline: none;
+}
+
+/* Styling the submit button as an arrow icon */
+#submit {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    fill: #919291;
+    height: 24px;
+}
+
+/* Submit icon styling (optional hover effect) */
+#submit:hover {
+    color: #333;
+}
+
+/* Styling the error message */
+#message {
+    color: #919291;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Stacking on mobile */
+@media (max-width: 768px) {
+    #lockedContent {
+        flex-direction: column;
+        width: 100%;
+max-width: 100%;
+    }
+
+
+
+
+
+    #input-wrapper {
+        flex-direction: column;
+    }
+
+    #password {
+        width: 100%;
+    }
+
+    #submit {
+        right: 15px;
+    }
+}
