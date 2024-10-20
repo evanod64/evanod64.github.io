@@ -152,7 +152,6 @@ const _0xbd14f0=_0x5cfa;function _0x5cfa(_0x1fa988,_0x43124c){const _0x464826=_0
 // ----------------------- play page scripts ---------------------- //
 
 if (window.location.pathname === '/play.html') {
-
     const leftContent = document.querySelector('.left-content');
     const videoBlocks = document.querySelectorAll('.spacer, video-block');
     const videoTexts = [
@@ -161,10 +160,10 @@ if (window.location.pathname === '/play.html') {
         'Music Visualizer — Built in After Effects, sounds made on an OP-1 Field.',
         'JellyVase. A "what if" idea.',
         'Scanned Spaces — Created with a lidar scanning app, Blender, Google Earth Studio.',
-        'Scanned Spaces — Created with a lidar scanning app, Blender, Google Earth Studio. And Unreal Engine.',
+        'Scanned Spaces — Created with a lidar scanning app, Blender, Google Earth Studio. And Unreal Engine',
         'Centered. Aligned. Collected? Shoulder blade study.',
         'A music-inspired exploration of my creative process.',
-         'Loop based on the Hawaiian legend of the Naupaka flowers.'
+        'Loop based on the Hawaiian legend of the Naupaka flowers.'
     ];
 
     function updateLeftContent(index) {
@@ -177,18 +176,21 @@ if (window.location.pathname === '/play.html') {
         clearTimeout(debounceTimeout);
         debounceTimeout = setTimeout(() => {
             let currentIndex = 0;
+            const isMobile = window.innerWidth <= 768; // Check if on mobile
+            const triggerPoint = isMobile ? window.innerHeight * 0.5 : window.innerHeight * 0.3; // Set different trigger heights
+
             videoBlocks.forEach((block, index) => {
                 const rect = block.getBoundingClientRect();
                 const blockTop = rect.top;
-                const triggerPoint = window.innerHeight * 0.3; // Adjust as needed
 
+                // Check if the block is above the trigger point
                 if (blockTop <= triggerPoint) {
                     currentIndex = index;
                 }
             });
 
             updateLeftContent(currentIndex);
-        }, 0); // Adjust debounce delay as needed
+        }, 25); // Adjust debounce delay as needed
     }
 
     window.addEventListener('scroll', handleScroll);
