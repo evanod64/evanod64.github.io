@@ -14,7 +14,7 @@ class VideoBlock extends HTMLElement {
       style.textContent = `
         .video-block {
           position: relative;
-          width: 100%; /* Responsive width */
+          width: 100%;
           box-sizing: border-box;
           overflow: hidden;
           border-radius: 10px;
@@ -28,22 +28,39 @@ class VideoBlock extends HTMLElement {
           height: 100%;
           object-fit: contain;
         }
+  
+        .thumbnail {
+          display: none;
+        }
       `;
   
-      // Determine video source and autoplay functionality
+      // Determine video source, autoplay, controls, and thumbnail functionality
       const videoSrc = this.getAttribute('video-src');
       const autoplay = this.getAttribute('autoplay') || 'no';
+      const controls = this.getAttribute('controls') || 'yes'; // Default to 'yes' for controls
+      const thumbnailSrc = this.getAttribute('thumbnail-src'); // Thumbnail for the poster attribute
       const mediaElement = document.createElement('video');
+  
       mediaElement.src = videoSrc;
       mediaElement.setAttribute('class', 'media-content');
   
+      // Set the thumbnail image as the poster
+      if (thumbnailSrc) {
+        mediaElement.setAttribute('poster', thumbnailSrc);
+      }
+  
+      // Autoplay logic
       if (autoplay === 'yes') {
         mediaElement.autoplay = true;
         mediaElement.loop = true;
-        mediaElement.muted = true;
+        mediaElement.muted = true; // Mute when autoplaying
         mediaElement.playsInline = true;
-      } else {
-        mediaElement.controls = true; // Show controls if autoplay is 'no'
+      }
+  
+      // Controls logic
+      if (controls === 'yes') {
+        mediaElement.controls = true; // Show controls for audio if autoplay is enabled
+        mediaElement.muted = autoplay === 'yes'; // If autoplay is 'yes', keep it muted by default
       }
   
       // Handle video metadata to get the natural aspect ratio and adjust the container

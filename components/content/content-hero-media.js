@@ -38,14 +38,17 @@ class ContentHeroMedia extends HTMLElement {
     
     // Create media element (image or video)
     const mediaSrc = this.getAttribute('media-src');
+    const thumbnailSrc = this.getAttribute('thumbnail-src');
     const mediaElement = document.createElement(mediaSrc.endsWith('.mp4') ? 'video' : 'img');
     mediaElement.setAttribute('class', 'hero-media-content');
     mediaElement.setAttribute('src', mediaSrc);
     mediaElement.setAttribute('loading', 'lazy');
+    
 
     // Add controls attribute for video elements
     if (mediaSrc.endsWith('.mp4')) {
-      mediaElement.setAttribute('controls', ''); // Adding controls for video
+      mediaElement.setAttribute('controls', '');
+      mediaElement.setAttribute('poster', thumbnailSrc);
     }
 
     // Create secondary text content (second context)
@@ -94,6 +97,8 @@ class ContentHeroMedia extends HTMLElement {
         margin: 0;
         align-self: last baseline;
         font-family: Lausanne;
+        -moz-osx-font-smoothing: grayscale;
+       -webkit-font-smoothing: antialiased;
       }
 
       .media-context-wrapper {
