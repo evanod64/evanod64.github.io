@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 
-    
+    // ---------------------- hamburger menu functionality ---------------------- //
 
     initHoverEffect(); 
 
@@ -98,43 +98,49 @@ function initHoverEffect() {
 
 
 
-    // Track if the case study has already been unloaded to prevent multiple unloads
-    let caseStudyUnloaded = false;
+// Track if the case study has already been unloaded to prevent multiple unloads
+let caseStudyUnloaded = false;
 
-    // Function to unload case study content and reset URL
-    function unloadCaseStudy() {
-        const caseStudyContent = $('#case-study-content');
+// Function to unload case study content and reset URL
+function unloadCaseStudy() {
+    const caseStudyContent = $('#case-study-content');
+    const homepageContent = $('#homepage-placeholder');
+    
+    if (!caseStudyUnloaded) {
+        // Unload the case study content
+        caseStudyContent.html(''); // Clear or hide the case study content
         
-        if (!caseStudyUnloaded && $(window).scrollTop() > caseStudyContent[0].scrollHeight) {
-            // Unload the case study content
-            caseStudyContent.html(''); // Clear or hide the case study content
-            
-            // Update the URL to the homepage without reloading the page
-            history.pushState(null, null, '/');
-            
-            // Mark the case study as unloaded
-            caseStudyUnloaded = true;
+        // Update the URL to the homepage without reloading the page
+        history.pushState(null, null, '/');
+        
+        // Scroll to the top of the homepage content
+        const homepageTop = homepageContent.offset().top;
+        $(window).scrollTop(homepageTop);
+        
+        // Mark the case study as unloaded
+        caseStudyUnloaded = true;
+    }
+}
+
+// Function to monitor scroll position and detect when to unload case study
+function handleScroll() {
+    const caseStudyContent = $('#case-study-content');
+    const homepageContent = $('#homepage-placeholder');
+    
+    // Ensure both the case study content and homepage content exist
+    if (caseStudyContent.length && homepageContent.length) {
+        const homepageTop = homepageContent.offset().top;
+        
+        // Check if the user has scrolled past the case study content
+        if ($(window).scrollTop() >= homepageTop && !caseStudyUnloaded) {
+            unloadCaseStudy();
         }
     }
+}
 
-    // Function to monitor scroll position and detect when to unload case study
-    function handleScroll() {
-        const caseStudyContent = $('#case-study-content');
-        const homepageContent = $('#homepage-placeholder');
-        
-        // Ensure both the case study content and homepage content exist
-        if (caseStudyContent.length && homepageContent.length) {
-            const homepageTop = homepageContent.offset().top;
-            
-            // Check if the user has scrolled past the case study content and into the homepage content
-            if ($(window).scrollTop() >= homepageTop && !caseStudyUnloaded) {
-                unloadCaseStudy();
-            }
-        }
-    }
+// Add scroll event listener for all pages
+$(window).on('scroll', handleScroll);
 
-    // Add scroll event listener for all pages
-    $(window).on('scroll', handleScroll);
 
 
 

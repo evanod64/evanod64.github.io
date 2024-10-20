@@ -89,6 +89,8 @@ class ContentColumns extends HTMLElement {
 
       h2 {
       font-family: Lausanne;
+          -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
       }
 
 

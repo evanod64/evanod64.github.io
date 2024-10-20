@@ -59,6 +59,8 @@ class ProjectIntro extends HTMLElement {
 
             h1 {
             font-family: Lausanne;
+                -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
             }
 
             #intro-wrapper {
