@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="/icons/ed-favicon.svg" />
     <link rel="shortcut icon" href="/icons/ed-favicon.ico" />
     <title>Play</title>
+    <link rel="stylesheet" href="/resets.css">
     <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,8 @@
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
 
   
+
+    
 </head>
 <body>
 
@@ -22,11 +25,76 @@
 
 
 
+  <main id="main">
+    <div class="left-content">
+        <div id="intro-container">
+            <h1>
+                Here are some explorations, side-projects, and general for-fun(s).</h1>
+
+    </div>
+</div> 
 
 
+
+    <div id="right-content" class="play-gallery">
+
+        <div class="spacer">
+        </div>
+
+
+        <video-block 
+        video-src="/assets/media/play/3D Flower Vid_compressed.mp4" 
+        autoplay="yes">
+        </video-block>
+
+
+        <video-block 
+        video-src="/assets/media/play/Music_Visualizer_V.02_smaller.mp4" 
+        autoplay="yes">
+        </video-block>
+
+
+        <video-block 
+        video-src="/assets/media/play/JellyVase_V3_compressed.mp4" 
+        autoplay="yes">
+        </video-block>
+
+
+        <video-block 
+        video-src="/assets/media/play/APT_orbit_Trim_compressed.mp4" 
+        autoplay="yes">
+        </video-block>
+
+
+        <video-block 
+        video-src="/assets/media/play/antFarm_blackBG_compressed.mp4" 
+        autoplay="yes">
+        </video-block>
+
+
+        <video-block 
+        video-src="/assets/media/play/Spinal_V2_compressed.mp4" 
+        autoplay="yes">
+        </video-block>
+
+
+        <video-block 
+        video-src="/assets/media/play/My Creative Process V1_compressed.mp4" 
+        autoplay="no">
+        </video-block>
+
+
+        <video-block 
+        video-src="/assets/media/play/Flowers_Square_compressed.mp4" 
+        autoplay="yes">
+        </video-block>
+
+
+
+</main>
 
   
-  <div id="homepage-placeholder" hx-get="/homepage-content.html" hx-trigger="load"></div>
+ 
 
 <footer>
   <div id="footer-container">
@@ -61,6 +129,7 @@
          </div>
   </div>
   </footer>
+  <script src="/components/gallery/video-block.js"></script>
   <script src="/components/gallery/image-carousel.js"></script>
   <script src="/components/gallery/content-gallery.js"></script>
   <script src="/components/content/content-columns.js"></script>

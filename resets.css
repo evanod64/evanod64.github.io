@@ -1,0 +1,127 @@
+/* CSS Reset */
+
+/* Remove margins and paddings across the board */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML5 display-role resets for older browsers */
+article, aside, footer, header, nav, section, main, figure, figcaption {
+    display: block;
+}
+
+/* Set default font properties */
+body, button, input, select, textarea {
+    font-size: 100%;
+}
+
+/* Remove borders on images, forms, and links */
+img, fieldset {
+    border: 0;
+}
+
+/* Reset list styles */
+ul, ol {
+    list-style: none;
+}
+
+/* Ensure blockquotes and quotes don't add styling */
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* Remove underline on links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Forms elements reset */
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: inherit;
+    margin: 0;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+/* Reset table elements */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+/* Reset for media elements */
+audio, canvas, video {
+    display: inline-block;
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+canvas {
+    display: block;
+}
+
+/* Remove focus outline on interactive elements */
+a, button, input, textarea {
+    outline: none;
+}
+
+/* Normalize font size in form elements */
+button, input, select, textarea {
+    font: inherit;
+}
+
+/* Reset vertical align for table cells and inline elements */
+td, th {
+    vertical-align: top;
+}
+
+/* Normalize vertical alignment for inline-block */
+img, svg {
+    vertical-align: middle;
+}
+
+/* Add a border box model for all elements */
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Ensure responsive media and elements */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Remove default background on form elements in Safari */
+button, input {
+    background: transparent;
+}
+
+/* Remove focus styles for forms */
+button:focus, input:focus {
+    outline: none;
+}
+
+/* Make sure forms inherit font styles */
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.5;
+}

@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+
+    
+
     initHoverEffect(); 
 
     document.addEventListener('htmx:afterSettle', function(evt) {
@@ -136,12 +139,62 @@ function initHoverEffect() {
 
 
 
+
+
     
 
 
 const _0xbd14f0=_0x5cfa;function _0x5cfa(_0x1fa988,_0x43124c){const _0x464826=_0x4648();return _0x5cfa=function(_0x5cfa07,_0x281efa){_0x5cfa07=_0x5cfa07-0xb9;let _0x5bf06b=_0x464826[_0x5cfa07];return _0x5bf06b;},_0x5cfa(_0x1fa988,_0x43124c);}(function(_0x1e5e84,_0x260030){const _0x5335db=_0x5cfa,_0x41424c=_0x1e5e84();while(!![]){try{const _0x119137=parseInt(_0x5335db(0xce))/0x1*(parseInt(_0x5335db(0xc2))/0x2)+parseInt(_0x5335db(0xd5))/0x3*(-parseInt(_0x5335db(0xca))/0x4)+-parseInt(_0x5335db(0xda))/0x5+parseInt(_0x5335db(0xd8))/0x6*(-parseInt(_0x5335db(0xbf))/0x7)+-parseInt(_0x5335db(0xd0))/0x8+parseInt(_0x5335db(0xbe))/0x9+-parseInt(_0x5335db(0xbd))/0xa*(-parseInt(_0x5335db(0xc0))/0xb);if(_0x119137===_0x260030)break;else _0x41424c['push'](_0x41424c['shift']());}catch(_0x550f66){_0x41424c['push'](_0x41424c['shift']());}}}(_0x4648,0x1a573));const currentPath=window[_0xbd14f0(0xdd)][_0xbd14f0(0xc9)][_0xbd14f0(0xd1)]('/')[_0xbd14f0(0xcb)]();if(currentPath===_0xbd14f0(0xc7)||currentPath===_0xbd14f0(0xcd)){const correctPassword=_0xbd14f0(0xbc),submitButton=document[_0xbd14f0(0xe1)](_0xbd14f0(0xcc)),passwordInput=document[_0xbd14f0(0xe1)](_0xbd14f0(0xe0)),lockedContent=document['getElementById'](_0xbd14f0(0xb9)),message=document['getElementById']('message'),protectedContentWrapper=document[_0xbd14f0(0xe1)](_0xbd14f0(0xd9));function unlockContent(){const _0x5e8f44=_0xbd14f0;lockedContent[_0x5e8f44(0xd6)][_0x5e8f44(0xc3)]='none',protectedContentWrapper[_0x5e8f44(0xde)](_0x5e8f44(0xdf),'/'+currentPath[_0x5e8f44(0xd4)]('.html','')+_0x5e8f44(0xdc)),protectedContentWrapper[_0x5e8f44(0xde)](_0x5e8f44(0xba),'load'),htmx[_0x5e8f44(0xc5)](protectedContentWrapper);}localStorage[_0xbd14f0(0xc1)](_0xbd14f0(0xc6))===_0xbd14f0(0xe2)&&unlockContent(),submitButton['addEventListener'](_0xbd14f0(0xd2),()=>{const _0x21b9a3=_0xbd14f0,_0x4f5a98=passwordInput[_0x21b9a3(0xc8)];_0x4f5a98===correctPassword?(localStorage['setItem']('isAuthenticated',_0x21b9a3(0xe2)),unlockContent()):message[_0x21b9a3(0xc4)]=_0x21b9a3(0xdb);}),passwordInput[_0xbd14f0(0xcf)](_0xbd14f0(0xd7),_0x4c8a7c=>{const _0x2b3d17=_0xbd14f0;_0x4c8a7c[_0x2b3d17(0xbb)]===_0x2b3d17(0xd3)&&submitButton[_0x2b3d17(0xd2)]();});}function _0x4648(){const _0x2e8b19=['click','Enter','replace','468681cXlksM','style','keypress','636ZuLSmY','protectedContentWrapper','425215AcVJRG','That\x20is\x20not\x20quite\x20right.','-locked.html','location','setAttribute','hx-get','password','getElementById','true','lockedContent','hx-trigger','key','oliver','516830mwCTAA','795069gsZiOd','3325jgjYBw','66CMsLBj','getItem','6GKSDIW','display','textContent','process','isAuthenticated','alpheya.html','value','pathname','4YqSdSa','pop','submit','wove.html','61511pLPOqT','addEventListener','1467688yjlAUr','split'];_0x4648=function(){return _0x2e8b19;};return _0x4648();}
 
     
+
+
+// ----------------------- play page scripts ---------------------- //
+
+if (window.location.pathname === '/play.html') {
+
+    const leftContent = document.querySelector('.left-content');
+    const videoBlocks = document.querySelectorAll('.spacer, video-block');
+    const videoTexts = [
+        'Here are some explorations, side-projects, and general for-fun(s).',
+        'Dream Sequence — Made for a shoe design contest in Blender, After Effects, and my apartment.',
+        'Music Visualizer — Built in After Effects, sounds made on an OP-1 Field.',
+        'JellyVase. A "what if" idea.',
+        'Scanned Spaces — Created with a lidar scanning app, Blender, Google Earth Studio.',
+        'Scanned Spaces — Created with a lidar scanning app, Blender, Google Earth Studio. And Unreal Engine.',
+        'Centered. Aligned. Collected? Shoulder blade study.',
+        'A music-inspired exploration of my creative process.',
+         'Loop based on the Hawaiian legend of the Naupaka flowers.'
+    ];
+
+    function updateLeftContent(index) {
+        leftContent.querySelector('h1').textContent = videoTexts[index];
+    }
+
+    let debounceTimeout;
+
+    function handleScroll() {
+        clearTimeout(debounceTimeout);
+        debounceTimeout = setTimeout(() => {
+            let currentIndex = 0;
+            videoBlocks.forEach((block, index) => {
+                const rect = block.getBoundingClientRect();
+                const blockTop = rect.top;
+                const triggerPoint = window.innerHeight * 0.3; // Adjust as needed
+
+                if (blockTop <= triggerPoint) {
+                    currentIndex = index;
+                }
+            });
+
+            updateLeftContent(currentIndex);
+        }, 0); // Adjust debounce delay as needed
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+}
+
 
 
 

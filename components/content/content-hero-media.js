@@ -77,7 +77,7 @@ class ContentHeroMedia extends HTMLElement {
         grid-column: span 4;
         grid-row: 1 / 2;
         gap: 5vw;
-        align-items: last baseline; /* Align children by baseline */
+        align-items: last baseline;
       }
 
       p.hero-text-content {
@@ -85,14 +85,15 @@ class ContentHeroMedia extends HTMLElement {
         max-width: 100%;
         padding: 0;
         margin: 0;
-        align-self: last baseline; /* Ensure baseline alignment */
+        align-self: last baseline;
       }
 
       .hero-title {
         grid-column: span 3;
         padding: 0;
         margin: 0;
-        align-self: last baseline; /* Ensure baseline alignment */
+        align-self: last baseline;
+        font-family: Lausanne;
       }
 
       .media-context-wrapper {

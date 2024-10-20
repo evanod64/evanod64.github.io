@@ -56,6 +56,11 @@ class ProjectIntro extends HTMLElement {
         // Add styles
         const style = document.createElement('style');
         style.textContent = `
+
+            h1 {
+            font-family: Lausanne;
+            }
+
             #intro-wrapper {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);

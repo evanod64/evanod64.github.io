@@ -20,7 +20,9 @@
 
 @font-face {
     font-family: LAUSANNE;
-   src: url(https://static1.squarespace.com/static/5e28bcdb6e962366618ef23b/t/65d927440358fe12dd71c807/1708730180129/TWKLausanne-600.otf);} 
+    src: url('/assets/fonts/TWKLausanne-600.woff2') format('woff2'), /* Preferred format for modern browsers */
+    url('/assets/fonts/TWKLausanne-600.woff') format('woff');   /* Fallback format */
+} 
 
 h1,h2,h3,h4,h5 {
     font-family: 'LAUSANNE';
@@ -31,12 +33,14 @@ h1,h2,h3,h4,h5 {
     padding: 0;
 }
 
+
+
+
 h1 {
     font-size: calc(2.2vw + 1rem);
  line-height: 1;
  letter-spacing: -1px;
 }
-
 
 
 
@@ -197,6 +201,200 @@ justify-content: space-between;
 .hover-word, .hover-word-2 {
     color: #808184;
 }
+
+
+/* ---------------------- NAV CODE ----------------------- */
+
+
+body .menu-open.active {
+    height: 100vh;
+    overflow: hidden;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between; /* Space between logo and nav-links */
+        align-items: center;
+        padding-left: var(--site-gutter-large);
+        padding-right: var(--site-gutter-large);
+        padding-top: var(--site-gutter-mid);
+        padding-bottom: var(--site-gutter-mid);
+        background-color: #ffffff;
+        width: 100%;
+    }
+    
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: var(--space-xxl);
+    }
+
+
+.nav-links a:hover {
+    color: #808189
+}
+
+.nav-links a.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #007BFF;
+}
+    
+    .nav-links ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: var(--space-xxl); /* Space between nav links */
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-links ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+    }
+    
+    .social-icon {
+        width: 24px; /* Adjust the size as needed */
+        height: 24px; /* Adjust the size as needed */
+    }
+    
+    .social-icon svg {
+        width: 100%;
+        height: 100%;
+        color: #000000;
+    }
+    
+    #logo {
+        height: 50px; /* Adjust the logo height */
+        max-width: 100%;
+    }
+    
+    
+    
+    
+    /* Overlay settings */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.9); /* 80% white overlay */
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+      z-index: 999; /* Make sure it's on top */
+    }
+    
+    .overlay.active {
+      opacity: 1;
+      visibility: visible!important;
+    }
+    
+    /* Centering the off-screen menu */
+    .off-screen-menu {
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease;
+      z-index: 1000; /* Above the overlay */
+    }
+    
+    
+    
+    /* Off-screen menu styling */
+    .off-screen-menu ul {
+        list-style: none;
+        text-align: center;
+        font-size: 2.5rem;
+        padding: 0;
+    }
+    
+    .off-screen-menu ul li {
+        margin: 20px 0;
+    }
+    
+    .off-screen-menu ul li a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    /* Hamburger menu styling */
+    .ham-menu {
+      height: 50px;
+      width: 50px;
+      position: relative;
+      cursor: pointer;
+      z-index: 1001; /* Make sure it's on top of the overlay */
+    }
+    
+    .ham-menu span {
+        height: 3px;
+        width: 35px;
+        background-color: black;
+        border-radius: 25px;
+        position: absolute;
+        transition: 0.3s ease;
+    }
+    
+    .ham-menu span:nth-child(1) {
+        top: 40%;
+    }
+    
+    .ham-menu span:nth-child(2) {
+        top: 60%;
+    }
+    
+    .ham-menu span:nth-child(3) {
+        top: 75%;
+    }
+    
+    /* When the menu is active (bars transform into an X) */
+    .ham-menu.active span:nth-child(1) {
+        top: 50%;
+        transform: rotate(45deg);
+    }
+    
+    .ham-menu.active span:nth-child(3) {
+        opacity: 0;
+    }
+    
+    .ham-menu.active span:nth-child(2) {
+        top: 50%;
+        transform: rotate(-45deg);
+    }
+    
+    
+    
+    /* Responsive styling */
+    @media (min-width: 768px) {
+        .ham-menu {
+            display: none; /* Hide hamburger menu on desktop */
+        }
+    
+        .nav-links {
+            display: flex; /* Normal menu for desktop */
+        }
+    
+        .overlay {
+            display: none; /* No overlay on desktop */
+        }
+    }
+    
+    @media (max-width: 767px) {
+        .nav-links {
+            display: none; /* Hide normal desktop menu on mobile */
+        }
+    }
+    
 
 
 
@@ -718,4 +916,11 @@ height:100%;
 
 #live-video-container {
 margin-bottom: 40px;
+}
+
+
+
+.spacer {
+    height: 30vh;
+    width: 100%;
 }

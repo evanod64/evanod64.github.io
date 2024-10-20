@@ -86,6 +86,13 @@ class ContentColumns extends HTMLElement {
     // Append styles
     const style = document.createElement('style');
     style.textContent = `
+
+      h2 {
+      font-family: Lausanne;
+      }
+
+
+
       .content-columns-title {
         padding-bottom: 40px;
         margin-top: 0;
