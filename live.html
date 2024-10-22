@@ -31,7 +31,7 @@
 <div id="live-video-container"></div>
 
 <script>
-    // Function to update the live clock
+ 
     function updateClock() {
         const clockElement = document.getElementById('live-clock');
         const now = new Date();
@@ -40,15 +40,15 @@
         const seconds = String(now.getSeconds()).padStart(2, '0');
         const ampm = hours >= 12 ? 'pm' : 'am';
         hours = hours % 12;
-        hours = hours ? hours : 12; // '0' should be '12'
+        hours = hours ? hours : 12; 
         
         clockElement.innerHTML = `${hours}:${minutes} ${ampm}`;
     }
 
-    setInterval(updateClock, 1000); // Update the clock every second
-    updateClock(); // Initial call to display the clock immediately
+    setInterval(updateClock, 30000); // Update the clock every 30 seconds
+    updateClock(); 
 
-    // Function to dynamically load video based on time
+ 
     document.addEventListener('DOMContentLoaded', function() {
         const videoContainer = document.getElementById('live-video-container');
 
@@ -97,39 +97,9 @@
   
   <div id="homepage-placeholder" hx-get="/homepage-content.html" hx-trigger="load"></div>
 
-<footer>
-  <div id="footer-container">
-  <div id="footer-links">
-   <div id="arena-link">
-          <p>Curious?<br>
-              <a href='https://www.are.na/evan-davison/index'>are.na/evan-davison</a></p>
-      </div>
+  <div id="footer-container" hx-get="/includes/footer.html" hx-trigger="load"></div>
 
-      <a href="/live.html" class="footer-button">Live →</a>
-  </div>
-
-  <div id="footer-nav">
-      <div class="footer-nav-links">
-          <ul>
-              <li><strong>Projects</strong></li>
-              <li><a href="/alpheya.html">Alpheya →</a></li>
-              <li><a href="/larrys.html">Larry's Cà Phê →</a></li>
-              <li><a href="/wove.html">Wove  🔒</a></li>
-              <li><a href="/wip-zine.html">WIP Zine →</a></li>
-              <li><a href="/living-galapagos.html">Living Galapagos Doc  →</a></li>
-          </ul>
-      </div>
-  </div>
-
-      <div id="footer-flower-container" class="footer-flower-container">
-          <div id="weather-headline" class="weather-headline">
-             <p id="headline-text">Loading...</p>
-           </div>
-         <div id="flowerContainer" class="flower-container"></div>
-        
-         </div>
-  </div>
-  </footer>
+  
   <script src="/components/gallery/image-carousel.js"></script>
   <script src="/components/gallery/content-gallery.js"></script>
   <script src="/components/content/content-columns.js"></script>

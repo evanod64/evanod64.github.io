@@ -24,9 +24,20 @@
   <div id="case-study-content">
 <div id="larrys" class="case-study">
 
+
+  <div id="larrys-award">
+    <img src="/assets/media/larrys/Cup_Animation_3.gif" style="width: 35px;"> 
+    </img>
+    <p style="color: white;">Awarded Grand Prize at the Shops of New York Film Festival</p>
+    </div>
+
+
   <div class="case-study-hero-image">
     <img src="/assets/media/larrys/20240807_Liu_LarrysCaPhe-35.jpg" alt="">
   </div>
+
+
+ 
 
   <project-intro 
   title="Larry's Cà Phê"
@@ -60,6 +71,7 @@
 
 
 <div id="larrys-gallery">
+  <p>The title design was drawn from the social media identity of Larry's Cà Phê, designed by <a href='https://www.instagram.com/la.duyen.nyc/'  target='_blank'rel='noreferrer'>@la.duyen.nyc</a></p>
 <masonry-gallery columns="2">
   <img src="/assets/media/larrys/larrys-insta-example-1.jpg" alt="Image 1" loading="lazy">
   <img src="/assets/media/larrys/Larrys_titleExample-1.gif" alt="Image 2" loading="lazy">
@@ -73,41 +85,9 @@
 
 
   
-<div id="homepage-placeholder" hx-get="/homepage-content.html" hx-trigger="load"></div>
+   <div id="homepage-placeholder" hx-get="/homepage-content.html" hx-trigger="load"></div>
 
-<footer>
-  <div id="footer-container">
-  <div id="footer-links">
-   <div id="arena-link">
-          <p>Curious?<br>
-              <a href='https://www.are.na/evan-davison/index'>are.na/evan-davison</a></p>
-      </div>
-
-      <a href="/live.html" class="footer-button">Live →</a>
-  </div>
-
-  <div id="footer-nav">
-      <div class="footer-nav-links">
-          <ul>
-              <li><strong>Projects</strong></li>
-              <li><a href="/alpheya.html">Alpheya →</a></li>
-              <li><a href="/larrys.html">Larry's Cà Phê →</a></li>
-              <li><a href="/wove.html">Wove  🔒</a></li>
-              <li><a href="/wip-zine.html">WIP Zine →</a></li>
-              <li><a href="/living-galapagos.html">Living Galapagos Doc  →</a></li>
-          </ul>
-      </div>
-  </div>
-
-      <div id="footer-flower-container" class="footer-flower-container">
-          <div id="weather-headline" class="weather-headline">
-             <p id="headline-text">Loading...</p>
-           </div>
-         <div id="flowerContainer" class="flower-container"></div>
-        
-         </div>
-  </div>
-  </footer>
+    <div id="footer-container" hx-get="/includes/footer.html" hx-trigger="load"></div>
 
   <script src="/components/gallery/image-carousel.js"></script>
   <script src="/components/gallery/content-gallery.js"></script>

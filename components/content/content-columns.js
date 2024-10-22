@@ -19,6 +19,10 @@ class ContentColumns extends HTMLElement {
     // Get the global aspect ratio for all images (or default to '3 / 2')
     const globalAspectRatio = this.getAttribute('aspect-ratio') || '3 / 2';
 
+    // Get background color and text color attributes (with default values)
+    const backgroundColor = this.getAttribute('background-color') || 'transparent';
+    const textColor = this.getAttribute('text-color') || '#000'; // Default to black text
+
     // Dynamically add content and images based on attributes
     let contentCount = 1;
     let imageCount = 1;
@@ -87,13 +91,17 @@ class ContentColumns extends HTMLElement {
     const style = document.createElement('style');
     style.textContent = `
 
-      h2 {
-      font-family: Lausanne;
-          -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+      .content-columns {
+        background-color: ${backgroundColor}; /* Apply background color */
+        color: ${textColor}; /* Apply text color */
       }
 
-
+      h2 {
+        font-family: Lausanne;
+        color: ${textColor}; /* Apply text color to title */
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+      }
 
       .content-columns-title {
         padding-bottom: 40px;
@@ -107,6 +115,7 @@ class ContentColumns extends HTMLElement {
         gap: 40px;
         padding-top: 64px;
         padding-bottom: 64px;
+         align-items: flex-start;
       }
 
       .content-paragraph {
@@ -130,7 +139,7 @@ class ContentColumns extends HTMLElement {
         text-align: left;
         margin-top: 16px;  /* Space between image and caption */
         font-size: 0.9em;
-        color: #555;
+        color: ${textColor}; /* Apply text color to caption */
       }
 
       p {

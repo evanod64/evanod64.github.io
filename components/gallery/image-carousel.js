@@ -2,73 +2,85 @@ class ImageCarousel extends HTMLElement {
     constructor() {
         super();
 
-        // Attach shadow DOM
         const shadow = this.attachShadow({ mode: 'open' });
 
-        // Create the wrapper for the entire carousel
         const wrapper = document.createElement('div');
         wrapper.setAttribute('class', 'carousel-wrapper');
 
-        // Create the main image container
         const carousel = document.createElement('div');
         carousel.setAttribute('class', 'carousel');
 
-        // Left button
-        const leftButton = document.createElement('button');
-        leftButton.setAttribute('class', 'carousel-button left');
-        leftButton.textContent = '←';
-        leftButton.addEventListener('click', () => this.showPreviousImage());
+        const leftButton = this._createButton('left', '←', this.showPreviousImage.bind(this));
 
-        // Right button
-        const rightButton = document.createElement('button');
-        rightButton.setAttribute('class', 'carousel-button right');
-        rightButton.textContent = '→';
-        rightButton.addEventListener('click', () => this.showNextImage());
+        const rightButton = this._createButton('right', '→', this.showNextImage.bind(this));
 
-        // Thumbnails wrapper
+        const buttonWrapper = document.createElement('div');
+        buttonWrapper.setAttribute('class', 'button-wrapper');
+        buttonWrapper.append(leftButton, rightButton);
+
         const thumbnails = document.createElement('div');
         thumbnails.setAttribute('class', 'thumbnails');
 
-        // Initialize variables to store images and thumbnails
         this.images = [];
+        this.thumbnails = [];
         this.currentImageIndex = 0;
 
-        // Create the images and thumbnails dynamically based on attributes
         let imageIndex = 1;
         while (this.hasAttribute(`image-${imageIndex}-src`)) {
             const imgSrc = this.getAttribute(`image-${imageIndex}-src`);
 
-            // Create image for the carousel
-            const img = document.createElement('img');
-            img.setAttribute('src', imgSrc);
-            img.setAttribute('class', 'carousel-image');
-            img.setAttribute('alt', `Carousel image ${imageIndex}`);
-            if (imageIndex === 1) img.classList.add('active'); // Set the first image active
-
-            // Add image to the images array
+            const img = this._createImageElement(imgSrc, imageIndex);
             this.images.push(img);
             carousel.appendChild(img);
 
-            // Create thumbnail
-            const thumbnail = document.createElement('img');
-            thumbnail.setAttribute('src', imgSrc);
-            thumbnail.setAttribute('class', 'thumbnail-image');
-            thumbnail.setAttribute('alt', `Thumbnail image ${imageIndex}`);
-            thumbnail.addEventListener('click', () => this.showImage(imageIndex - 1));  // Correct click handler
-
+            const thumbnail = this._createThumbnailElement(imgSrc, imageIndex);
             thumbnails.appendChild(thumbnail);
+            this.thumbnails.push(thumbnail);
 
-            // Move to the next image
             imageIndex++;
         }
 
-        // Append elements to the wrapper
-        wrapper.appendChild(leftButton);
-        wrapper.appendChild(carousel);
-        wrapper.appendChild(rightButton);
-        wrapper.appendChild(thumbnails);
+        wrapper.append(carousel, buttonWrapper, thumbnails);
 
-        // Append styles for layout
+        const style = this._getCarouselStyle();
+
+        shadow.append(style, wrapper);
+
+        this.updateCarousel();
+    }
+
+    _createButton(direction, text, clickHandler) {
+        const button = document.createElement('button');
+        button.setAttribute('class', `carousel-button ${direction}`);
+        button.textContent = text;
+        button.addEventListener('click', clickHandler);
+        return button;
+    }
+
+    _createImageElement(src, index) {
+        const img = document.createElement('img');
+        img.setAttribute('src', src);
+        img.setAttribute('class', 'carousel-image');
+        img.setAttribute('alt', `Carousel image ${index}`);
+        img.style.display = index === 1 ? 'block' : 'none';
+        return img;
+    }
+
+    _createThumbnailElement(src, index) {
+        const thumbnail = document.createElement('img');
+        thumbnail.setAttribute('src', src);
+        thumbnail.setAttribute('class', 'thumbnail-image');
+        thumbnail.setAttribute('alt', `Thumbnail image ${index}`);
+        thumbnail.dataset.index = index - 1;
+        thumbnail.addEventListener('click', () => {
+            const thumbnailIndex = parseInt(thumbnail.dataset.index, 10);
+            console.log(`Thumbnail clicked: Index ${thumbnailIndex}`);
+            this.showImage(thumbnailIndex);
+        });
+        return thumbnail;
+    }
+
+    _getCarouselStyle() {
         const style = document.createElement('style');
         style.textContent = `
             .carousel-wrapper {
@@ -94,38 +106,29 @@ class ImageCarousel extends HTMLElement {
             .carousel-image {
                 width: 100%;
                 height: 100%;
-                min-width: 100%;
-                min-height: 100%;
-                display: none;
-                transition: opacity 0.3s ease;
                 object-fit: contain;
-                border-radius: 10px;
+                display: none;
             }
 
             .carousel-image.active {
                 display: block;
             }
 
+            .button-wrapper {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+                gap: 20px;
+            }
+
             .carousel-button {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: rgba(0, 0, 0, 0.5);
-                color: white;
+                background-color: white;
+                color: #808189;
                 border: none;
                 padding: 10px;
                 cursor: pointer;
-                z-index: 1;
                 font-size: 2rem;
-                 border-radius: 5px;
-            }
-
-            .carousel-button.left {
-                left: 10px;
-            }
-
-            .carousel-button.right {
-                right: 10px;
+                border-radius: 5px;
             }
 
             .thumbnails {
@@ -142,7 +145,7 @@ class ImageCarousel extends HTMLElement {
                 cursor: pointer;
                 opacity: 0.5;
                 transition: opacity 0.3s ease;
-                 border-radius: 5px;
+                border-radius: 5px;
             }
 
             .thumbnail-image.active {
@@ -153,6 +156,7 @@ class ImageCarousel extends HTMLElement {
             @media (max-width: 768px) {
                 .carousel {
                     width: 90vw;
+                    height: 30vh;
                 }
 
                 .thumbnail-image {
@@ -162,40 +166,39 @@ class ImageCarousel extends HTMLElement {
                 }
             }
         `;
-
-        // Append style and wrapper to the shadow DOM
-        shadow.appendChild(style);
-        shadow.appendChild(wrapper);
+        return style;
     }
 
     showPreviousImage() {
+        console.log('Previous button clicked');
         this.currentImageIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
         this.updateCarousel();
     }
 
     showNextImage() {
+        console.log('Next button clicked');
         this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
         this.updateCarousel();
     }
 
     showImage(index) {
+        console.log(`Show image: Index ${index}`);
         this.currentImageIndex = index;
         this.updateCarousel();
     }
 
     updateCarousel() {
-        // Update carousel images
+        console.log(`Updating carousel to show index ${this.currentImageIndex}`);
+        
         this.images.forEach((img, index) => {
+            img.style.display = index === this.currentImageIndex ? 'block' : 'none';
             img.classList.toggle('active', index === this.currentImageIndex);
         });
 
-        // Update the thumbnails to reflect the active image
-        const thumbnailImages = this.shadowRoot.querySelectorAll('.thumbnail-image');
-        thumbnailImages.forEach((thumbnail, index) => {
+        this.thumbnails.forEach((thumbnail, index) => {
             thumbnail.classList.toggle('active', index === this.currentImageIndex);
         });
     }
 }
 
-// Define the custom element
 customElements.define('image-carousel', ImageCarousel);

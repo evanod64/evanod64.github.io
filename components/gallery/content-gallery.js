@@ -10,8 +10,9 @@ class ContentGallery extends HTMLElement {
         wrapper.setAttribute('class', 'gallery-wrapper');
 
         // Get user-defined attributes
-        const columnCount = this.getAttribute('columns') || 3; // Default to 3 columns
-        const aspectRatio = this.getAttribute('aspect-ratio') || '16/9'; // Default to 16:9
+        const columnCount = this.getAttribute('columns') || 3;
+        const aspectRatio = this.getAttribute('aspect-ratio') || '16/9'; 
+        const gap = this.getAttribute('gap') || '16px';
 
         // Create the images from attributes
         let imageIndex = 1;
@@ -44,7 +45,7 @@ class ContentGallery extends HTMLElement {
             .gallery-wrapper {
                 display: grid;
                 grid-template-columns: repeat(${columnCount}, 1fr);
-                gap: 16px;
+                gap: ${gap};
                 padding-top: 64px;
                 padding-bottom: 64px;
             }
@@ -58,6 +59,8 @@ class ContentGallery extends HTMLElement {
             figure.gallery-item {
              margin: 0;
             }
+
+          
 
             .gallery-item img {
                 position: absolute;
@@ -75,11 +78,7 @@ class ContentGallery extends HTMLElement {
                 }
             }
 
-            @media (max-width: 480px) {
-                .gallery-wrapper {
-                    grid-template-columns: repeat(1, 1fr); /* Adjust to 1 column on smaller screens */
-                }
-            }
+       
         `;
 
         // Attach style and wrapper to shadow DOM
