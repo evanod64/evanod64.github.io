@@ -220,7 +220,7 @@ const _0xbd14f0=_0x5cfa;function _0x5cfa(_0x1fa988,_0x43124c){const _0x464826=_0
 
 // ----------------------- play page scripts ---------------------- //
 
-if (window.location.pathname === '/play.html') {
+if (window.location.pathname === '/play' || window.location.pathname === '/play.html') {
     const leftContent = document.querySelector('.left-content');
     const videoBlocks = document.querySelectorAll('.spacer, video-block');
     const videoTexts = [
