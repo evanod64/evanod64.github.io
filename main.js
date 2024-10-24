@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+
+
+
+
+
+    // ---------------------- about section bounce ---------------------- //
+
     document.addEventListener('htmx:afterOnLoad', function(evt) {
         const hash = window.location.hash;
         if (hash) {
@@ -15,6 +22,24 @@ $(document).ready(function () {
                 });
             }
         }
+
+    const videoSources = [
+        '/assets/site media/flower-draw-blue_compressed.mp4',
+        '/assets/site media/flower-draw-green_compressed.mp4',
+        '/assets/site media/flower-draw-lightBlue_compressed.mp4',
+        '/assets/site media/flower-draw-orange_compressed.mp4',
+        '/assets/site media/flower-draw-pink_compressed.mp4'
+      ];
+  
+      const randomIndex = Math.floor(Math.random() * videoSources.length);
+      const selectedVideo = videoSources[randomIndex];
+
+      const videoElement = document.getElementById('random-video');
+      const sourceElement = document.getElementById('video-source');
+      sourceElement.src = selectedVideo;
+
+      videoElement.load();
+
     });
   
 
@@ -35,7 +60,7 @@ $(document).ready(function () {
             $('.overlay').removeClass('active');
             $('.off-screen-menu').removeClass('active');
         });
-        
+  
         
     });
 

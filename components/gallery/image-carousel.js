@@ -86,14 +86,14 @@ class ImageCarousel extends HTMLElement {
             .carousel-wrapper {
                 position: relative;
                 width: 100%;
-                max-width: 100vw;
+                max-width: 100%;
                 margin: 0 auto;
                 padding-top: 64px;
                 padding-bottom: 64px;
             }
 
             .carousel {
-                width: 70vw;
+                width: 70%;
                 height: 50vh;
                 margin: 0 auto;
                 overflow: hidden;

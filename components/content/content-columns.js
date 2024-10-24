@@ -113,8 +113,6 @@ class ContentColumns extends HTMLElement {
         display: grid;
         grid-template-columns: repeat(${totalColumns}, 1fr);  /* Dynamic columns */
         gap: 40px;
-        padding-top: 64px;
-        padding-bottom: 64px;
          align-items: flex-start;
       }
 

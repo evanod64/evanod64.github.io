@@ -24,81 +24,83 @@
   <div id="case-study-content">
 <div id="living-galapagos" class="case-study">
 
-  <div class="case-study-hero-image">
-    <img src="/assets/media/living-galapagos/Screen+Shot+2022-04-25+at+11.17.14+AM.png" alt="living-galapagos-banner">
-  </div>
 
-  <project-intro 
-  title="Living Galapagos Documentary"
-  role="Filmmaker / Editor"
-  context1="International Journalism Project with the Hussman School of Journalism and Media.<br><br>
-
-  I traveled with the MEJO International Projects class to the Galapagos Islands to create stories in teams of 5. Our group focused on land ecosystems, and created a multi-media project following multiple stories of locals associated with farming and agriculture in San Cristobal."
-  context2="Produced, filmed, and edited a short-form documentary “Function of Everything”">
-</project-intro>
-
-<!-- This is a video embed block -->
-<div class="video-wrapper">
-  <iframe 
-      src="https://player.vimeo.com/video/697219220"
-      width="640" 
-      height="360" 
-      frameborder="0" 
-      allow="autoplay; fullscreen; picture-in-picture" 
-      allowfullscreen>
-  </iframe>
-</div>
-
-<div id="living-galapagos-gallery">
-<masonry-gallery columns="2">
-  <img src="/assets/media/living-galapagos/tempImageRwEu0j.jpg" alt="Image 1" loading="lazy">
-  <img src="/assets/media/living-galapagos/299BA0D3-9975-4ED9-A92A-1321BAED76E7.jpeg" alt="Image 2" loading="lazy">
-</masonry-gallery>
-</div>
-
-  </div>
-  </div>
-
-  <style>
-
-#living-galapagos-gallery {
-  max-width: 70vw;
-  margin-left: auto; margin-right: auto;
-}
-
-
-   /* Video wrapper styles */
-   .video-wrapper {
-            width: 70vw; /* Set width to 60% of the viewport */
-            position: relative; /* Position relative for absolute positioning of the iframe */
-            padding-top: 56.25%; /* Maintain a 16:9 aspect ratio */
-            overflow: hidden; /* Hide overflow */
-            margin-left: auto; margin-right: auto;
-            border-radius: 10px;
-         
-        }
-
-    
-
-        /* Video iframe styles */
-        .video-wrapper iframe {
-            position: absolute; /* Position absolute within the wrapper */
-            top: 0; /* Align to the top */
-            left: 0; /* Align to the left */
-            width: 100%; /* Make the iframe fill the width of the wrapper */
-            height: 100%; /* Make the iframe fill the height of the wrapper */
+            <div class="left-content">
+                <div class="case-sidebar-content">
         
-        }
+                    <div class="case-sidebar-content-title">
+                    <h2>Living Galapagos Documentary</h2>
+                    <p>Filmmaker / Editor</p>
+                     </div>
+        
+        
+        
+                    <p>International Journalism Project with the Hussman School of Journalism and Media.<br><br>
 
-        /* Mobile styling */
-        @media (max-width: 768px) {
-            .video-wrapper {
-                width: 100%; /* Change width to 100% on mobile */
-                padding-top: 56.25%; /* Maintain aspect ratio */
-            }
-        }
+                        I traveled with the MEJO International Projects class to the Galapagos Islands to create stories in teams of 5. Our group focused on land ecosystems, and created a multi-media project following multiple stories of locals associated with farming and agriculture in San Cristobal.</p>
+        
+                        <p>Produced, filmed, and edited a short-form documentary “Function of Everything”</p>
+                            
+            
+            </div>
+        </div> 
+
+        
+        
+        
+        <div class="right-content project-gallery" >
+            <div class="case-study-hero-image" style="height: 40vh;">
+                <img src="/assets/media/living-galapagos/Screen+Shot+2022-04-25+at+11.17.14+AM.png" alt="">
+              </div>
+        
+
+              <div class="content-container">
+                <p>“Function of Everything” follows Isabel Vasco, an entrepreneur and coffee farmer at Café Embrujo, a female-led, family owned business in San Cristobal. Between a farm in the Highlands and her home in the city, Isabel challenges occupational prejudice while nurturing a close relationship with her family and the natural world. </p>
+    </div>
+            <div class="vimeo-embed-wrapper">
+                <iframe src="https://player.vimeo.com/video/697219220?&dnt=1"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                title="Function of Everything Documentary"
+                ></iframe>
+            </div>
+        
+            
+            
+
+
+
+            <content-columns 
+            aspect-ratio="4 / 3"
+            columns="2"
+            content-1="We spent 10 days on the island of San Cristobal, in the Galapagos Islands of Ecuador. For our documentary, my video teammate and I briefly stayed with our story-partner Isabel.
+
+            We followed her as she harvested coffee beans from her family farm, through the process of drying, roasting, and packaging coffee."
+        
+            content-2='As part of the International Journalism Class from the Hussman School of Journalism and Media, we collected many different stories, experiences, and memories across many different aspects of the life in the Galapagos.'
+          ></content-columns>
+
+          <a href="https://livinggalapagos.unc.edu/living-on-the-land/">View the Project ↗</a>
+
+
+            <div id="living-galapagos-gallery">
+                <masonry-gallery columns="2">
+                  <img src="/assets/media/living-galapagos/tempImageRwEu0j.jpg" alt="Image 1" loading="lazy">
+                  <img src="/assets/media/living-galapagos/299BA0D3-9975-4ED9-A92A-1321BAED76E7.jpeg" alt="Image 2" loading="lazy">
+                </masonry-gallery>
+                </div>
+        
     
-    </style>
+        
+          </div>
+          </div>
+        
+            
+            </div>
+
+
+
 
   
 <div id="homepage-placeholder" hx-get="/homepage-content.html" hx-trigger="load"></div>

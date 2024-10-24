@@ -70,8 +70,6 @@ class ContentHeroMedia extends HTMLElement {
         grid-template-rows: auto auto;
         gap: 40px;
         align-items: center;
-        padding-top: 64px;
-        padding-bottom: 64px;
       }
 
       .title-text-wrapper {

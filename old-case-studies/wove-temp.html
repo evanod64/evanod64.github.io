@@ -19,52 +19,37 @@
 </head>
 <body>
 
-    
-
   <div id="nav-container" hx-get="/includes/nav.html" hx-trigger="load"></div>
   
   <div id="case-study-content">
-  
+    <div id="wove" class="case-study">
 
-        <div id="lockedContent">
-            <div id="lock-icon"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg></div> 
-            <h1>I'm sorry, this project is protected</h1>
-            <p>Please request access @ evandavison64@gmail.com</p>
-            
-            <div id="input-wrapper">
-                <input type="password" id="password" placeholder="Password">
-                <button id="submit"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" ><path d="m701.33-300.67-47.66-46.66L752.33-446H120v-66.67h633l-98.33-98.66 47-46.67L880-479.33 701.33-300.67Z"/></svg></button> 
-            </div>
-            
-            <div id="message"></div>
+
+      <div id="lockedContent">
+        <div id="lock-icon"><svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg></div> 
+        <h1>I'm sorry, this project is protected</h1>
+        <p>Please request access @ evandavison64@gmail.com</p>
+        
+        <div id="input-wrapper">
+            <input type="password" id="password" placeholder="Password">
+            <button id="submit"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" ><path d="m701.33-300.67-47.66-46.66L752.33-446H120v-66.67h633l-98.33-98.66 47-46.67L880-479.33 701.33-300.67Z"/></svg></button> 
         </div>
-    
-    
-      <div id="protectedContentWrapper"></div>
+        
+        <div id="message"></div>
+    </div>
 
 
+  <div id="protectedContentWrapper">
 
-
-
-
-
-
-
-  
-
-
-
-
-
+  </div>
 </div>
-
+</div>
 
 
   <div id="homepage-placeholder" hx-get="/homepage-content.html" hx-trigger="load"></div>
 
   <div id="footer-container" hx-get="/includes/footer.html" hx-trigger="load"></div>
 
-  <script src="/components/gallery/video-block.js"></script>
   <script src="/components/gallery/image-carousel.js"></script>
   <script src="/components/gallery/content-gallery.js"></script>
   <script src="/components/content/content-columns.js"></script>

@@ -20,8 +20,7 @@ class MasonryGallery extends HTMLElement {
         grid-template-columns: repeat(${columns}, 1fr);
         grid-auto-flow: dense;
         grid-gap: 10px; 
-        padding-top: 64px;
-        padding-bottom: 64px;
+
       }
 
       .masonry-gallery img {
