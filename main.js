@@ -1,10 +1,11 @@
 $(document).ready(function () {
 
+   // ---------------------- lazy image loading ---------------------- //
 
 
 
 
-
+   
     // ---------------------- about section bounce ---------------------- //
 
     document.addEventListener('htmx:afterOnLoad', function(evt) {
