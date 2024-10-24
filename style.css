@@ -143,7 +143,7 @@
   }
   
   p {
-    font-size: 0.9em;
+    font-size: 1em;
   }
   
   
@@ -183,6 +183,13 @@
     justify-content: space-between;
     padding: var(--site-gutter-large);
     height: 100%;
+  }
+
+
+  #flower-garnish {
+    width: 250px;
+    border-radius: 10px;
+    overflow: clip;
   }
   
   
@@ -387,7 +394,7 @@
     display: flex;
     flex-direction: column;
     gap: 64px;
-    width: 64vw;
+    width: 62vw;
   }
   
   #random-video {
@@ -1103,6 +1110,12 @@
   
   }
   
+
+  #flower-garnish {
+    width: 50%;
+    border-radius: 10px;
+    overflow: clip;
+  }
   
   #larrys-award{
   

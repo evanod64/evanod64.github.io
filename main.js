@@ -35,7 +35,7 @@ $(document).ready(function () {
       const randomIndex = Math.floor(Math.random() * videoSources.length);
       const selectedVideo = videoSources[randomIndex];
 
-      const videoElement = document.getElementById('random-video');
+      const videoElement = document.getElementById('flower-garnish');
       const sourceElement = document.getElementById('video-source');
       sourceElement.src = selectedVideo;
 
