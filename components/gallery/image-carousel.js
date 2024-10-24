@@ -170,25 +170,21 @@ class ImageCarousel extends HTMLElement {
     }
 
     showPreviousImage() {
-        console.log('Previous button clicked');
         this.currentImageIndex = (this.currentImageIndex - 1 + this.images.length) % this.images.length;
         this.updateCarousel();
     }
 
     showNextImage() {
-        console.log('Next button clicked');
         this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
         this.updateCarousel();
     }
 
     showImage(index) {
-        console.log(`Show image: Index ${index}`);
         this.currentImageIndex = index;
         this.updateCarousel();
     }
 
     updateCarousel() {
-        console.log(`Updating carousel to show index ${this.currentImageIndex}`);
         
         this.images.forEach((img, index) => {
             img.style.display = index === this.currentImageIndex ? 'block' : 'none';

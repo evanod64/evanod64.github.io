@@ -118,6 +118,7 @@ class ContentColumns extends HTMLElement {
 
       .content-paragraph {
         max-width: 100%;
+        font-size: 0.9em;
       }
 
       .image-container {
