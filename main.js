@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 
 
-   
+
     // ---------------------- about section bounce ---------------------- //
 
     document.addEventListener('htmx:afterOnLoad', function(evt) {
@@ -25,11 +25,11 @@ $(document).ready(function () {
         }
 
     const videoSources = [
-        '/assets/site media/flower-draw-blue_compressed.mp4',
-        '/assets/site media/flower-draw-green_compressed.mp4',
-        '/assets/site media/flower-draw-lightBlue_compressed.mp4',
-        '/assets/site media/flower-draw-orange_compressed.mp4',
-        '/assets/site media/flower-draw-pink_compressed.mp4'
+        '/assets/site-media/flower-draw-blue_compressed.mp4',
+        '/assets/site-media/flower-draw-green_compressed.mp4',
+        '/assets/site-media/flower-draw-lightBlue_compressed.mp4',
+        '/assets/site-media/flower-draw-orange_compressed.mp4',
+        '/assets/site-media/flower-draw-pink_compressed.mp4'
       ];
   
       const randomIndex = Math.floor(Math.random() * videoSources.length);
