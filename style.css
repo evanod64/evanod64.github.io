@@ -205,7 +205,12 @@
   }
   
   .right-content.play-gallery {
-    gap: 120px;
+    gap: 200px;
+    width: 45vw;
+  }
+
+  .left-content.play-description {
+    max-width: 35vw;
   }
   
   
@@ -267,6 +272,14 @@
     #play-body .right-content {
       gap: 100px;
     }
+
+    .right-content.play-gallery {
+        width: 100%;
+      }
+    
+      .left-content.play-description {
+        max-width: 100%;
+      }
     
     #play {
       flex-direction: column;
