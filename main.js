@@ -206,12 +206,50 @@ $(window).on('scroll', handleScroll);
 
 
 
+const currentPath = window.location.pathname.split('/').pop();
+
+
+if (currentPath === 'alpheya' || currentPath === 'alpheya.html' || currentPath === 'wove' || currentPath === 'wove.html') {
+    const correctPassword = 'oliver';
+    const submitButton = document.getElementById('submit');
+    const passwordInput = document.getElementById('password');
+    const lockedContent = document.getElementById('lockedContent');
+    const message = document.getElementById('message');
+    const protectedContentWrapper = document.getElementById('protectedContentWrapper');
     
+    function unlockContent() {
+        lockedContent.style.display = 'none';
+
+      
+        const cleanedPath = currentPath.replace('.html', ''); 
+        protectedContentWrapper.setAttribute('hx-get', `/${cleanedPath}-locked.html`);
+        protectedContentWrapper.setAttribute('hx-trigger', 'load');
+        htmx.process(protectedContentWrapper);
+    }
 
 
-const _0xbd14f0=_0x5cfa;function _0x5cfa(_0x1fa988,_0x43124c){const _0x464826=_0x4648();return _0x5cfa=function(_0x5cfa07,_0x281efa){_0x5cfa07=_0x5cfa07-0xb9;let _0x5bf06b=_0x464826[_0x5cfa07];return _0x5bf06b;},_0x5cfa(_0x1fa988,_0x43124c);}(function(_0x1e5e84,_0x260030){const _0x5335db=_0x5cfa,_0x41424c=_0x1e5e84();while(!![]){try{const _0x119137=parseInt(_0x5335db(0xce))/0x1*(parseInt(_0x5335db(0xc2))/0x2)+parseInt(_0x5335db(0xd5))/0x3*(-parseInt(_0x5335db(0xca))/0x4)+-parseInt(_0x5335db(0xda))/0x5+parseInt(_0x5335db(0xd8))/0x6*(-parseInt(_0x5335db(0xbf))/0x7)+-parseInt(_0x5335db(0xd0))/0x8+parseInt(_0x5335db(0xbe))/0x9+-parseInt(_0x5335db(0xbd))/0xa*(-parseInt(_0x5335db(0xc0))/0xb);if(_0x119137===_0x260030)break;else _0x41424c['push'](_0x41424c['shift']());}catch(_0x550f66){_0x41424c['push'](_0x41424c['shift']());}}}(_0x4648,0x1a573));const currentPath=window[_0xbd14f0(0xdd)][_0xbd14f0(0xc9)][_0xbd14f0(0xd1)]('/')[_0xbd14f0(0xcb)]();if(currentPath===_0xbd14f0(0xc7)||currentPath===_0xbd14f0(0xcd)){const correctPassword=_0xbd14f0(0xbc),submitButton=document[_0xbd14f0(0xe1)](_0xbd14f0(0xcc)),passwordInput=document[_0xbd14f0(0xe1)](_0xbd14f0(0xe0)),lockedContent=document['getElementById'](_0xbd14f0(0xb9)),message=document['getElementById']('message'),protectedContentWrapper=document[_0xbd14f0(0xe1)](_0xbd14f0(0xd9));function unlockContent(){const _0x5e8f44=_0xbd14f0;lockedContent[_0x5e8f44(0xd6)][_0x5e8f44(0xc3)]='none',protectedContentWrapper[_0x5e8f44(0xde)](_0x5e8f44(0xdf),'/'+currentPath[_0x5e8f44(0xd4)]('.html','')+_0x5e8f44(0xdc)),protectedContentWrapper[_0x5e8f44(0xde)](_0x5e8f44(0xba),'load'),htmx[_0x5e8f44(0xc5)](protectedContentWrapper);}localStorage[_0xbd14f0(0xc1)](_0xbd14f0(0xc6))===_0xbd14f0(0xe2)&&unlockContent(),submitButton['addEventListener'](_0xbd14f0(0xd2),()=>{const _0x21b9a3=_0xbd14f0,_0x4f5a98=passwordInput[_0x21b9a3(0xc8)];_0x4f5a98===correctPassword?(localStorage['setItem']('isAuthenticated',_0x21b9a3(0xe2)),unlockContent()):message[_0x21b9a3(0xc4)]=_0x21b9a3(0xdb);}),passwordInput[_0xbd14f0(0xcf)](_0xbd14f0(0xd7),_0x4c8a7c=>{const _0x2b3d17=_0xbd14f0;_0x4c8a7c[_0x2b3d17(0xbb)]===_0x2b3d17(0xd3)&&submitButton[_0x2b3d17(0xd2)]();});}function _0x4648(){const _0x2e8b19=['click','Enter','replace','468681cXlksM','style','keypress','636ZuLSmY','protectedContentWrapper','425215AcVJRG','That\x20is\x20not\x20quite\x20right.','-locked.html','location','setAttribute','hx-get','password','getElementById','true','lockedContent','hx-trigger','key','oliver','516830mwCTAA','795069gsZiOd','3325jgjYBw','66CMsLBj','getItem','6GKSDIW','display','textContent','process','isAuthenticated','alpheya.html','value','pathname','4YqSdSa','pop','submit','wove.html','61511pLPOqT','addEventListener','1467688yjlAUr','split'];_0x4648=function(){return _0x2e8b19;};return _0x4648();}
+    if (localStorage.getItem('isAuthenticated') === 'true') {
+        unlockContent();
+    }
 
-    
+    submitButton.addEventListener('click', () => {
+        const inputPassword = passwordInput.value;
+
+        if (inputPassword === correctPassword) {
+            localStorage.setItem('isAuthenticated', 'true');
+            unlockContent();
+        } else {
+            message.textContent = 'That is not quite right.';
+        }
+    });
+
+    passwordInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            submitButton.click();
+        }
+    });
+}
+
 
 
 
@@ -220,9 +258,7 @@ const _0xbd14f0=_0x5cfa;function _0x5cfa(_0x1fa988,_0x43124c){const _0x464826=_0
 
 // ----------------------- play page scripts ---------------------- //
 
-const pathname = window.location.pathname.replace(/\/+$/, '').replace(/\.html$/, '');
-
-if (pathname === '/play') {
+if (window.location.pathname === '/play' || window.location.pathname === '/play.html') {
     const leftContent = document.querySelector('.left-content');
     const videoBlocks = document.querySelectorAll('.spacer, video-block');
     const videoTexts = [
